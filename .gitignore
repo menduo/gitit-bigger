@@ -9,3 +9,4 @@ cache/
 *.log
 *.pyc
 .DS_Store
+my-gitit*.conf
