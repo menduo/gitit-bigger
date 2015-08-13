@@ -1,6 +1,7 @@
-my-gitit.conf
+my-gitit*.conf
 gitit-users
-wikidata/
+wikidata*/
+_test*
 
 gitconfig
 
@@ -9,5 +10,4 @@ cache/
 *.log
 *.pyc
 .DS_Store
-my-gitit*.conf
-pdata/
+
