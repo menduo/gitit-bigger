@@ -226,7 +226,7 @@ git config --global user.email Your Email
 
 ## clone 我的 gitit 项目
 ```bash
-git clone git@github.com:shajiquan/gitit-package.git ./gitit
+git clone https://github.com/shajiquan/gitit-package ./gitit
 git branch --set-upstream-to=origin/master master
 cp sample.gitit.conf my-gitit.conf
 ```
