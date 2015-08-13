@@ -1,0 +1,332 @@
+body {
+    padding: 15px 0;
+}
+
+h1.pageTitle { font-size: 197%; margin: 0.2em 0 .5em; }
+h1 { font-size: 153.9%; margin: 1.07em 0 .535em; }
+h2 { font-size: 138.5%; margin: 1.14em 0 .57em; }
+h3 { font-size: 123.1%; margin: 1.23em 0 .615em; }
+h4 { font-size: 116%; margin: 1.33em 0 .67em; }
+h5 { font-size: 108%; margin: 1.6em 0 .8em; }
+h6 { font-size: 100%; margin: 1.6em 0 .8em; }
+
+h1 > a:link, h1 > a:active, h1 > a:hover, h1 > a:focus, h1 > a:visited,
+h2 > a:link, h2 > a:active, h2 > a:hover, h2 > a:focus, h2 > a:visited,
+h3 > a:link, h3 > a:active, h3 > a:hover, h3 > a:focus, h3 > a:visited,
+h4 > a:link, h4 > a:active, h4 > a:hover, h4 > a:focus, h4 > a:visited,
+h5 > a:link, h5 > a:active, h5 > a:hover, h5 > a:focus, h5 > a:visited,
+h6 > a:link, h6 > a:active, h6 > a:hover, h6 > a:focus, h6 > a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+#logo, #searchform {
+    margin-bottom: 20px;
+}
+
+#logo {
+    text-align: center;
+}
+
+#logo > a {
+    color: #777;
+    display: block !important;
+    font-family: serif;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#logo > a:hover {
+    text-decoration: none;
+}
+
+#logo img {
+    max-width: 100%;
+}
+
+#sidebar {
+    font-size: 90%;
+}
+
+#sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar li {
+    margin: 0 0 3px;
+}
+
+#sidebar a {
+    display: inline-block;
+    padding: 2px;
+}
+
+#sidebar .panel-heading {
+    padding: 0.5em 0.7em;
+}
+
+#sidebar .panel-body {
+    padding: 0.7em;
+}
+
+#userbox {
+    float: right;
+}
+
+#userbox > a {
+    display: block;
+    float: right;
+    padding: 10px;
+}
+
+.revision {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+h2.revision {
+    margin-top: 0;
+}
+
+small.revision {
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.tabs {
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.tabs > li {
+    float: left;
+    margin-bottom: -1px;
+}
+.tabs > li > a {
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    display: block;
+    margin-right: 2px;
+    padding: 10px 15px;
+    position: relative;
+}
+.tabs > li.selected > a {
+    border-color: #428bca #428bca #fff;
+    color: #000;
+}
+
+#main {
+    border-top-left-radius: 0;
+    clear: both;
+}
+
+#TOC ul {
+    list-style: decimal inside;
+    margin: 0;
+    padding: 0;
+}
+#TOC > ul {
+    background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    display: table;
+    float: right;
+    font-size: 90%;
+    margin: 0 0 0.8em 0.8em;
+    padding: 7px;
+}
+#TOC > ul:before {
+    content: 'Contents';
+    display: block;
+    font-weight: bold;
+    padding-bottom: 5px;
+    text-align: center;
+}
+#TOC ul ul {
+    padding-left: 1.5em;
+}
+
+@media (max-width: 768px) {
+    #TOC > ul {
+        float: none;
+    }
+}
+
+#footer {
+    color: #999;
+    font-size: 90%;
+    text-align: center;
+}
+
+#editform textarea {
+    font-family: monospace;
+    font-size: 93%;
+    height: 25em;
+    width: 100%;
+}
+#editform #logMsg {
+    margin-bottom: 0.3em;
+    margin-right: 1em;
+    width: 100%;
+}
+
+#previewpane {
+    margin-top: 1em;
+}
+
+
+/* Deal with multiple footnotes one after another */
+sup + sup {
+    margin-left: 2px;
+}
+
+
+/* .req is used to hide a honeypot in a form */
+.req {
+    display: none;
+}
+
+
+/* Search */
+
+#pattern {
+    background-color: yellow;
+    font-weight: bold;
+}
+pre.matches span.highlighted {
+    background-color: yellow;
+}
+
+
+/* Diffs */
+
+.diff {
+    background-color: transparent;
+    border: none;
+    padding: 0 0 0 1em;
+}
+.added::before, .deleted::before {
+    height: 100%;
+    left: -1em;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    white-space: normal;
+    width: 1em;
+}
+.added::before {
+    background-color: #dfd;
+    content: "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
+}
+.deleted::before {
+    content: "----------------------------------------------------------------";
+    background-color: #fdd;
+}
+.added, .deleted {
+    display: block;
+    position: relative;
+}
+.added {
+    background-color: #dfd;
+}
+.deleted {
+    background-color: #fdd;
+}
+
+
+/* Syntax highlighting */
+
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+
+
+/* Index */
+
+.index ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.index li {
+    list-style: none;
+    background-position: 0 1px;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+.index li.page {
+    background-image: url(../img/icons/page.png);
+}
+.index li.folder {
+    background-image: url(../img/icons/folder.png);
+}
+.index a {
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+}
+.index a + a {
+    margin-left: 0.5em;
+}
+.index a:hover {
+    text-decoration: underline;
+}
+
+
+/* Additional print styles (Bootstrap provides the basic ones) */
+
+@media print {
+
+    #maincol {
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+    #main {
+        border: none !important;
+        clear: none !important;  /* Work around a Firefox bug */
+    }
+
+    #content {
+        padding: 0 !important;
+    }
+
+    #TOC > ul {
+        float: none !important;
+    }
+
+    /* Links */
+    a {
+        color: inherit !important;
+        text-decoration: underline !important;
+    }
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, #TOC a {
+        text-decoration: none !important;
+    }
+    a[href]:after {
+        font-size: 90%;
+    }
+    a:not([href*="/"]):after, a[href^="/"]:after, a[href^="#"]:after {
+        /* Don't show hrefs of internal links */
+        display: none !important;
+    }
+
+}

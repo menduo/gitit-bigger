@@ -1,0 +1,11 @@
+my-gitit.conf
+gitit-users
+wikidata/
+
+gitconfig
+
+cache/
+
+*.log
+*.pyc
+.DS_Store
