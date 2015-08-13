@@ -10,3 +10,4 @@ cache/
 *.pyc
 .DS_Store
 my-gitit*.conf
+pdata/
