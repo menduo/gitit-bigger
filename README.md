@@ -226,7 +226,7 @@ git config --global user.email Your Email
 
 ## clone 我的 gitit 项目
 ```bash
-git clone git@github.com:shajiquan/gitit.git ./gitit
+git clone git@github.com:shajiquan/gitit-package.git ./gitit
 git branch --set-upstream-to=origin/master master
 cp sample.gitit.conf my-gitit.conf
 ```
@@ -359,7 +359,7 @@ Gitit 服务启用时将自动创建如下目录（如果它们不存在） :
 
 
 # Links
-* [shajiquan/gitit](https://github.com/shajiquan/gitit): [https://github.com/shajiquan/gitit](https://github.com/shajiquan/gitit)
+* [shajiquan/gitit](https://github.com/shajiquan/gitit-package): [https://github.com/shajiquan/gitit-package](https://github.com/shajiquan/gitit-package)
 * [shajiquan/gitit-docker](https://github.com/shajiquan/gitit-docker): [https://github.com/shajiquan/gitit-docker](https://github.com/shajiquan/gitit-docker)
 * [在Archlinux上部署gitit Wiki](http://www.360doc.com/content/12/0518/21/21412_211977928.shtml): [http://www.360doc.com/content/12/0518/21/21412_211977928.shtml](http://www.360doc.com/content/12/0518/21/21412_211977928.shtml)
 * [Gitit - git based wiki](http://walkingice.blogspot.hk/2011/11/gitit-git-based-wiki.html): [http://walkingice.blogspot.hk/2011/11/gitit-git-based-wiki.html](http://walkingice.blogspot.hk/2011/11/gitit-git-based-wiki.html)
