@@ -1,15 +1,15 @@
 <script type="text/javascript">
 /* <![CDATA[ */
   \$.get("$base$/_user", {}, function(username, status) {
-     \$(".logged_in_user").text(username);
      if (username == "") {  // nobody logged in
-        \$(".registerlink").show();
-        \$(".loginlink").show();
-        \$(".logoutlink").hide();
+        \$(".registerlink").removeClass('hide');
+        \$(".loginlink").removeClass('hide');
+        \$(".logoutlink").addClass('hide');
      } else {
-        \$(".registerlink").hide();
-        \$(".loginlink").hide();
-        \$(".logoutlink").show();
+        \$(".logged_in_user").text(username);
+        \$(".registerlink").addClass('hide');
+        \$(".loginlink").addClass('hide');
+        \$(".logoutlink").removeClass('hide');
      };
    });
 /* ]]> */

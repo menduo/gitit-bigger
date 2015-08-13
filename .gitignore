@@ -1,7 +1,8 @@
 my-gitit*.conf
 gitit-users
 wikidata*/
-_test*
+test-*
+test_*
 
 gitconfig
 

@@ -6,6 +6,7 @@
         <title>$wikititle$ - $pagetitle$</title>
         <link rel="stylesheet" href="$base$/css/bootstrap.min.css" />
         <link rel="stylesheet" href="$base$/css/gitit.min.css" />
+        <link rel="stylesheet" href="$base$/css/custom.css" />
         <link href='$base$/img/favicon.ico' rel='icon' type='image/x-icon'/>
         $if(feed)$
         <link href="$base$/_feed/" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed" />
@@ -13,12 +14,18 @@
         $endif$
     </head>
     <body>
+
+        $siteHeaderNav()$
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-10 " id="maincol">
                     <div class="hidden-print">
                         $userbox()$
-                        $tabs$
+                        <div id="page-tabs">
+                            $tabs$
+                        </div>
+
                     </div>
                     $content()$
                     $if(markuphelp)$
@@ -44,47 +51,8 @@
         $expire()$
         $getuser()$
 
-    <style type="text/css" media="screen">
-        body{
-            word-wrap: break-word;
-        }
-        #editor {
-          height: 400px;
-          width: 100%;
-          border: 1px solid #ddd;
-          /*border-radius: 4px;*/
-          /*font-size: 14px;*/
-          /*font-family: Monaco, "Liberation Mono", Courier, monospace;*/
-        }
-        #editedText {
-          visibility: hidden;
-          display: none;
-        }
-        pre > code{
-            white-space:pre!important;
-        }
-
-        div#categoryList {
-            padding: 0em;
-            padding-top: 10px;
-            margin: 1em 0 0 0;
-            border: 1px dashed #ccc;
-        }
-
-        #categoryList > ul:before{
-            content: 'Categories: ';
-            font-size: 153.9%;
-            font-weight: bold;
-            line-height: 30px;
-        }
-
-        ul > li{
-            margin-bottom: 5px!important;
-        }
-
-        </style>
-
         <script src="$base$/js/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="$base$/js/isMobile.min.js" type="text/javascript" charset="utf-8"></script>
         <script>
 
             document.addEventListener("click", function (e) {
@@ -95,8 +63,16 @@
                 }
             });
 
+
+
+            var is_phone = isMobile.phone;
+            var is_tablet = isMobile.tablet;
+            var is_seven_inch = isMobile.seven_inch;
+
+            var is_mobile_device = is_phone || is_tablet || is_seven_inch;
+
             var ta = document.getElementById("editedText");
-            if (ta){
+            if (ta && !is_mobile_device){
                 var editorDiv = document.createElement("div");
                 editorDiv.setAttribute("id", "editor");
                 ta.parentNode.insertBefore(editorDiv, ta.nextSibling);
@@ -111,7 +87,30 @@
                 editor.getSession().setUseWrapMode(true);
                 // editor.setKeyboardHandler("ace/keyboard/ace");
                 // editor.focus();
+            }else{
+                \$('#editedText').css('visibility',"visible").css('display',"block")
             }
+
+            if(is_mobile_device){
+                //
+            }
+
+            function getParam(n) {
+                    var half = location.search.split('&' + n + '=')[1];
+                    if (!half) half = location.search.split('?' + n + '=')[1];
+                    return half !== undefined ? decodeURIComponent(half.split('&')[0]) : null;
+            }
+
+            var search_text = getParam('patterns');
+
+            /* <![CDATA[ */
+                if(search_text && search_text != ""){
+                    \$('.input-search-form').each(function(idx,item){\$(item).val(search_text)})
+                }
+        /* ]]> */
+
+
+
 
         </script>
     </body>
