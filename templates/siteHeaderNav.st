@@ -20,14 +20,14 @@
 
       <form action="$base$/_search" method="get" id="searchform" class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input type="text" name="patterns" id="patterns" class="form-control input-search-form" placeholder="Search">
+          <input type="text" name="patterns" id="patterns" class="form-control input-search-form input-search-form-in-header" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
 
       <ul class="nav navbar-nav navbar-right">
             <li><a class="loginlink " href="$base$/_login">Login</a></li>
-            <li><a class="logoutlink" href="$base$/_logout">Logout <span class="logged_in_user"></span></a></li>
+            <li><a class="logoutlink hide" href="$base$/_logout">Logout @<span class="logged_in_user"></span></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
