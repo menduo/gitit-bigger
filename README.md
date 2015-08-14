@@ -1,5 +1,23 @@
 # Gitit 介绍及我的实践
 
+# Quick Start
+
+## 普通版
+
+```bash
+git clone https://github.com/shajiquan/gitit-package
+cp sample.gitit.conf my-gitit.conf
+./run/run.sh start
+```
+
+## Docker 版
+
+```bash
+docker run -d --name gitit -p 7500:7500 shajiquan/gitit
+```
+
+更多用法详见下文。
+
 # Gitit
 
 一个基于 Git 版本管理系统的 Wiki，使用 Haskell 语言编写。
@@ -193,7 +211,7 @@ cabal-install install gitit
 ## 依配置文件&后台运行
 
 ```bash
-nohup gitit -f my-gitit.conf>logs-server.log&
+nohup gitit -f my-gitit.conf > logs-gitit.log & echo $! > pid-my-gitit.conf.pid 2>&1 &
 ```
 
 

@@ -11,6 +11,10 @@
                 $messages:message()$
             </div>
         $endif$
+
         $content$
+
+        <a class="scrollup clearfix" href="#">To Top</a>
+
     </div>
 </div>

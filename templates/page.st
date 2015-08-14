@@ -53,6 +53,7 @@
 
         <script src="$base$/js/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
         <script src="$base$/js/isMobile.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="$base$/js/jquery.sticky-kit.min.js" type="text/javascript" charset="utf-8"></script>
         <script>
 
         function getParam(n) {
@@ -68,7 +69,6 @@
             \$('input[type="submit"], input[type="button"]').each(function(idx,item){
                 \$(item).addClass('btn btn-default btn-sm');
             });
-
 
             // detect device type
             var is_phone = isMobile.phone;
@@ -122,6 +122,40 @@
                     });
                 }
             }
+
+
+            // \$("#TOC").stick_in_parent();
+
+            // scroll to top button
+            var scrollup = \$('.scrollup');
+
+            \$(scrollup).hide();
+
+            \$(window).scroll(function () {
+                if (\$(this).scrollTop() > 100) {
+                    \$(scrollup).fadeIn();
+                } else {
+                    \$(scrollup).fadeOut();
+                }
+
+                // if (\$(window).scrollTop() > offset.top) {
+                //     \$(TOC_ID).stop().animate({
+                //         marginTop: \$(window).scrollTop() - offset.top + topPadding
+                //     });
+                // } else {
+                //     \$(TOC_ID).stop().animate({
+                //         marginTop: 0
+                //     });
+                // };
+
+
+            });
+
+            \$(scrollup).on,("click",function () {
+                \$('html, body').animate({ scrollTop: 0 }, 100);
+                return false;
+            });
+
 
 
         });

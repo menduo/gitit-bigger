@@ -75,19 +75,34 @@
                 background-color: #f5f5f5 !important;
         }
 
-/*For fixed navbar */
+    /*For fixed navbar */
     body{
-        padding-top: 95px;
+        /*padding-top: 95px;*/
     }
 
-    .navbar-fixed-top{
+    nav#header-navbar{
         padding-top: 10px;
+
+    }
+
+    #TOC{
+        float: right;
     }
 
     #header-navbar-collapse>.navbar-nav>li>a:hover, #header-navbar-collapse>.navbar-nav>li>a:focus {
         text-decoration: none!important;
         background-color: #eee!important;
     }
+
+    a.scrollup{
+        display: inline;
+        /*width: 40px;*/
+        height: 40px;
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        background-size: 40px;
+}
 
 
 

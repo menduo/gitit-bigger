@@ -3,6 +3,7 @@ gitit-users
 wikidata*/
 test-*
 test_*
+pid-*
 
 gitconfig
 

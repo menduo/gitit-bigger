@@ -45,7 +45,7 @@ h6 > a:link, h6 > a:active, h6 > a:hover, h6 > a:focus, h6 > a:visited {
 }
 
 #sidebar {
-    font-size: 90%;
+    /*font-size: 90%;*/
 }
 
 #sidebar ul {
@@ -167,13 +167,13 @@ small.revision {
 
 #footer {
     color: #999;
-    font-size: 90%;
+    font-size: 95%;
     text-align: center;
 }
 
 #editform textarea {
     font-family: monospace;
-    font-size: 93%;
+    font-size: 95%;
     height: 25em;
     width: 100%;
 }
