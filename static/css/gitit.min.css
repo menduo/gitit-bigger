@@ -116,8 +116,16 @@ small.revision {
     position: relative;
 }
 .tabs > li.selected > a {
-    border-color: #428bca #428bca #fff;
+    border-color: #e7e7e7;
     color: #000;
+    background-color: #f5f5f5;
+    text-decoration: none!important;
+}
+
+.tabs > li > a:hover, .tabs > li >a:focus{
+    border-color: #e7e7e7;
+    background-color: #ebebeb;
+    text-decoration: none!important;
 }
 
 #main {
@@ -131,13 +139,14 @@ small.revision {
     padding: 0;
 }
 #TOC > ul {
-    background-color: #f9f9f9;
-    border: 1px solid #aaa;
-    display: table;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    display: block;
     float: right;
-    font-size: 90%;
-    margin: 0 0 0.8em 0.8em;
-    padding: 7px;
+    padding: 20px;
+    margin-left: 5px;
+    max-width: 480px;
+    border-radius: 10px;
 }
 #TOC > ul:before {
     content: 'Contents';

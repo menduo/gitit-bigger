@@ -35,7 +35,7 @@
             line-height: 30px;
         }
 
-        ul > li{
+        #maincol > ul > li{
             margin-bottom: 5px!important;
         }
 
@@ -74,3 +74,20 @@
                 padding: 5px 5px!important;
                 background-color: #f5f5f5 !important;
         }
+
+/*For fixed navbar */
+    body{
+        padding-top: 95px;
+    }
+
+    .navbar-fixed-top{
+        padding-top: 10px;
+    }
+
+    #header-navbar-collapse>.navbar-nav>li>a:hover, #header-navbar-collapse>.navbar-nav>li>a:focus {
+        text-decoration: none!important;
+        background-color: #eee!important;
+    }
+
+
+

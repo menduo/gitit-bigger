@@ -1,4 +1,4 @@
-<div class="panel panel-primary" id="main">
+<div class="panel panel-default" id="main">
     <div class="panel-body" id="content">
         <h1 class="pageTitle">
             <a href="$base$$pageUrl$">$pagetitle$</a>

@@ -6,13 +6,13 @@ cd $path_gitit_dir
 
 case "$1" in
     start)
-        nohup gitit -f my-gitit.conf>logs-gitit.log&
+        nohup gitit -f my-gitit.conf > logs-gitit.log  2>&1 &
         ;;
     restart)
-        pkill gitit && nohup gitit -f my-gitit.conf>logs-gitit.log&
+        ps aux |grep 'my-gitit.conf' | grep -v "grep" | awk '{print $2}' | xargs kill ; nohup gitit -f my-gitit.conf > logs-gitit.log 2>&1 &
         ;;
     stop)
-        pkill gitit
+        ps aux |grep 'my-gitit.conf' | grep -v "grep" | awk '{print $2}'  | xargs kill
         ;;
     *)
         echo "Usage: $0 {start | stop | restart}" >&2; exit 1
