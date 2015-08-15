@@ -14,7 +14,7 @@
 
         $content$
 
-        <a class="scrollup clearfix" href="#">To Top</a>
+        <a class="scrollup clearfix" href="#">↑ Top</a>
 
     </div>
 </div>

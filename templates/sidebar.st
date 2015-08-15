@@ -10,6 +10,16 @@
     </form>
 </div>
 
+
+<div class="col-sm-6 col-md-12 col-toc hide">
+    <div class="panel panel-default">
+        <div class="panel-heading">TOC</div>
+        <div class="panel-body">
+
+        </div>
+    </div>
+</div>
+
 <div class="col-sm-6 col-md-12 hide">
     <div class="panel panel-default">
         <div class="panel-heading">Site</div>
