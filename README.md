@@ -332,10 +332,10 @@ docker run -d --name gitit -p 7500:7500 shajiquan/gitit
 
 ### 挂载已有 gitit
 
-假设你的 gitit 项目在 `/home/shajiquan/gitit` 下，将此目录挂载到 docker 容器里：
+假设你的 gitit 项目在 `~/workspace/gitit` 下，将此目录挂载到 docker 容器里：
 
 ```bash
-docker run -d --name gitit -p 7500:7500 -v /home/shajiquan/gitit:/data/gitit shajiquan/gitit
+docker run -d --name gitit -p 7500:7500 -v ~/workspace/gitit:/data/gitit shajiquan/gitit
 ```
 
 ### 重启 docker 容器中的 gitit 服务
