@@ -5,7 +5,7 @@
     Bath file ext renamer for https://github.com/shajiquan/gitit
 
     usage:
-        ./batch_renamer_by_ext.py --d /path/to/dir/ --f txt --t md
+        ./batch_renamer_by_ext.py --d ./wikidata --f md --t page
 
 
     show help messages:
@@ -16,7 +16,7 @@
         --add False --push False --commit False
 
     Full example:
-        ./batch_renamer_by_ext.py --d /path/to/dir/ --f txt --t md --add False --push False --commit False
+        ./batch_renamer_by_ext.py --d ./wikidata --f md --t page --add False --push False --commit False
 
 """
 
@@ -90,9 +90,14 @@ if __name__ == '__main__':
     folder = args.d
 
     if folder:
+        if not os.path.isabs(folder):
+            folder = os.path.abspath(folder)
+
         joind_path = os.path.join(current_dir_path, folder)
+
         if not os.path.isdir(folder) or not os.path.isdir(joind_path):
             raise ValueError("No such file or directory: '%s' " % folder)
+
         current_dir_path = folder
 
     os.chdir(current_dir_path)
