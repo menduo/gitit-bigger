@@ -14,3 +14,4 @@ cache/
 .DS_Store
 
 templates/page_more_scripts.st
+supervisord.conf
