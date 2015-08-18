@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="header-navbar-collapse">
 
       <ul class="nav navbar-nav">
-        $siteNaviLinks()$
+        $header_nav_links()$
       </ul>
 
       <form action="$base$/_search" method="get" id="searchform" class="navbar-form navbar-left" role="search">

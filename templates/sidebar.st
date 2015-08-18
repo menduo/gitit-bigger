@@ -25,7 +25,7 @@
         <div class="panel-heading">Site</div>
         <div class="panel-body">
             <ul>
-                $siteNaviLinks()$
+                $header_nav_links()$
             </ul>
         </div>
     </div>

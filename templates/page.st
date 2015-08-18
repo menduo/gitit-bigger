@@ -12,10 +12,11 @@
         <link href="$base$/_feed/" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed" />
         <link href="$base$/_feed$pageUrl$" type="application/atom+xml" rel="alternate" title="This page's ATOM Feed" />
         $endif$
+        <meta name="poweredby" content="https://github.com/shajiquan/gitit-package">
     </head>
     <body>
 
-        $siteHeaderNav()$
+        $header_nav()$
 
         <div class="container-fluid">
             <div class="row">
@@ -140,5 +141,11 @@
 
         });
         </script>
+
+
+        <div class="hide page-more-scripts">
+            $page_more_scripts()$
+        </div>
+
     </body>
 </html>
