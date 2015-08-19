@@ -5,18 +5,21 @@ my-gitit*.conf
 gitit-users
 templates/page_more_scripts.st
 
+wikidata/
 wikidata*/
 
 cache/
 
 *.pyc
 .DS_Store
+logs-*
+
+*supervisord*.sock
 
 
 localscript*.sh
 _test*
 test-*.sh
 *.log
-logs-*
 *.pid
 .DS_Store
