@@ -13,6 +13,8 @@ cache/
 .DS_Store
 logs-*
 
+*supervisord*.sock
+
 
 localscript*.sh
 _test*
