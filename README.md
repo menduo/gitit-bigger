@@ -2,7 +2,7 @@
 
 # Quick Start
 
-## 普通版
+## 普通版 Package Version
 
 ```bash
 git clone https://github.com/shajiquan/gitit-package
@@ -10,7 +10,7 @@ cp sample.gitit.conf my-gitit.conf
 ./run/run.sh start
 ```
 
-## Docker 版
+## Docker 版 Docker Version
 
 ```bash
 docker run -d --name gitit -p 7500:7500 shajiquan/gitit
@@ -228,8 +228,12 @@ nohup gitit -f my-gitit.conf > logs-gitit.log & echo $! > pid-my-gitit.conf.pid 
 * 安装了 Bootstrap 模板（via [Changaco/gitit-bootstrap](https://github.com/Changaco/gitit-bootstrap)）
 * 安装了 Ace Editor (via [Getting the Ace editor to work with gitit](https://gist.github.com/lmullen/e2d2d4aabf84220c517a))
 * Ace Editor 的编辑模式已设为 `markdown`。
+    * 支持代码高亮
+    * 搜索、替换（cmd+option+f）
+    * Tab 缩进、恢复（tab、shift+tab）
+    * ...
 * 采用配置文件方式启动
-* 默认使用 `md` 文件后缀（必须使用 gitit 0.11.1+）
+* ~~默认使用 `md` 文件后缀（必须使用 gitit 0.11.1+）~~ —— 现在使用默认的 `page` 了，主要是方便在不同系统上部署，等到 apt-get 的源都已经升级为 0.11.x 时再切换回 `md`。
 * 启用了部分安全相关配置
 * 增加了启动、部分、自动备份脚本或帮助
 

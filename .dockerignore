@@ -11,12 +11,12 @@ cache/
 
 *.pyc
 .DS_Store
+logs-*
 
 
 localscript*.sh
 _test*
 test-*.sh
 *.log
-logs-*
 *.pid
 .DS_Store
