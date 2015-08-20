@@ -10,8 +10,8 @@ Gitit package with Bootstrap template and ace Editor support.
 ## 普通版 Package Version
 
 ```bash
-git clone https://github.com/shajiquan/gitit-package ~/gitit
-cd ~/gitit
+git clone https://github.com/shajiquan/gitit-package ~/workspace/gitit
+cd ~/workspace/gitit
 cp sample.gitit.conf my-gitit.conf
 ./run/run.sh start
 ```
@@ -254,8 +254,8 @@ git config --global user.email Your Email
 
 ## clone 我的 gitit 项目
 ```bash
-git clone https://github.com/shajiquan/gitit-package ~/gitit
-cd ~/gitit
+git clone https://github.com/shajiquan/gitit-package ~/workspace/gitit
+cd ~/workspace/gitit
 git branch --set-upstream-to=origin/master master
 cp sample.gitit.conf my-gitit.conf
 ```
@@ -271,7 +271,7 @@ cp sample.gitit.conf my-gitit.conf
 ## clone 你的数据
 
 ```bash
-cd ~/gitit
+cd ~/workspace/gitit
 git clone your-wikidata.git ./wikidata
 git branch --set-upstream-to=origin/master master
 ```
@@ -286,7 +286,7 @@ git branch --set-upstream-to=origin/master master
 ## 启用 gitit 服务
 
 ```bash
-cd ~/gitit
+cd ~/workspace/gitit
 ./run/run.sh start
 ```
 

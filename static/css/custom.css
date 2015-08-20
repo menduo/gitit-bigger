@@ -2,9 +2,23 @@
 
 /* Put your custom style modifications here: */
 
-        body{
-            word-wrap: break-word;
+
+        #content {
+            word-wrap: break-word!important;
         }
+
+
+        #content pre > code{
+            word-wrap: normal!important;
+            overflow-x: auto!important;
+            white-space:pre!important;
+        }
+
+        p > code, li > code{
+            word-wrap: break-word!important;
+            white-space:pre!important;
+        }
+
         #editor {
           height: 400px;
           width: 100%;
@@ -16,9 +30,6 @@
         #editedText {
           visibility: hidden;
           display: none;
-        }
-        pre > code{
-            white-space:pre!important;
         }
 
         div#categoryList {
