@@ -22,4 +22,5 @@ _test*
 test-*.sh
 *.log
 *.pid
-.DS_Store
+.DS_Storelocals/
+locals
