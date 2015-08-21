@@ -1,8 +1,11 @@
 # Gitit 介绍及我的实践
 
-Gitit package with Bootstrap template and ace Editor support.
+Gitit-package: Deploy Gitit by docker, Bootstrap, ace Editor and syntax highlight support.
 
 基于 Git 和 Markdown 的超棒的 Wiki 系统，Bootstrap、Ace 编辑器等增强。
+
+* Github：[https://github.com/shajiquan/gitit-package]()
+* DockreHub：[https://hub.docker.com/r/shajiquan/gitit/]()
 
 
 # Quick Start
@@ -240,6 +243,7 @@ nohup gitit -f my-gitit.conf > logs-gitit.log & echo $! > pid-my-gitit.conf.pid 
     * ...
 * 采用配置文件方式启动
 * ~~默认使用 `md` 文件后缀（必须使用 gitit 0.11.1+）~~ —— 现在使用默认的 `page` 了，主要是方便在不同系统上部署，等到 apt-get 的源都已经升级为 0.11.x 时再切换回 `md`。
+* 支持在我的版本上自定义 CSS/JSS（在 `templates/page_more_scripts.st` 中，详见下文）
 * 启用了部分安全相关配置
 * 增加了启动、部分、自动备份脚本或帮助
 
@@ -386,6 +390,36 @@ Gitit 服务启用时将自动创建如下目录（如果它们不存在） :
 - `/data/gitit/static/` ：必须的静态文件；
 - `/data/gitit/templates/` 模板；
 - `/data/gitit/wikidata/` Wiki 页面所在目录，一个 git repo；
+
+## 自定义 JS/CSS
+
+`templates/page_more_scripts.st` 这个文件已被引入到 `templates/page.st`(模板主文件)中，但这个 more 文件，并没有被加入到 git 版本控制中。
+
+因此，你可以在 `page_more_scripts.st` 中定制 CSS/JS。在 Gitit 的系统里，这个文件将被当作 `HTML` 来处理。我的内容如下：
+
+
+```html
+<link rel="stylesheet" href="/js/highlight/styles/monokai_sublime.css">
+<script src="/js/highlight/highlight.pack.js"></script>
+
+<script>
+// more js scripts here
+
+// jquery shoud be escaped. or you can just use jQuery(document)
+\$("#content").ready(function(){
+    \$("#content a[href^='http://']").attr("target","_blank");
+
+    \$('pre').each(function(i, block) {
+        hljs.highlightBlock(block);
+    });
+
+});
+
+</script>
+```
+
+
+
 
 
 # Links
