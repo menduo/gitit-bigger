@@ -4,8 +4,8 @@ Gitit-package: Deploy Gitit by docker, Bootstrap, ace Editor and syntax highligh
 
 基于 Git 和 Markdown 的超棒的 Wiki 系统，Bootstrap、Ace 编辑器等增强。
 
-* Github：[https://github.com/shajiquan/gitit-package]()
-* DockreHub：[https://hub.docker.com/r/shajiquan/gitit/]()
+* Github：[https://github.com/shajiquan/gitit-package](https://github.com/shajiquan/gitit-package)
+* DockreHub：[https://hub.docker.com/r/shajiquan/gitit](https://hub.docker.com/r/shajiquan/gitit)
 
 
 # Quick Start
