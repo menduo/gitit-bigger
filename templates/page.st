@@ -83,7 +83,6 @@
                 // if is on an edit page.
 
                 // update summary notice.
-
                 var logMsg = document.getElementById("logMsg");
                 logMsg.setAttribute("placeholder", "Edit summary (Briefly describe your changes)")
 
@@ -101,8 +100,6 @@
                     editor.getSession().setMode("ace/mode/markdown");
                     editor.setShowPrintMargin(false);
                     editor.getSession().setUseWrapMode(true);
-                    // editor.setKeyboardHandler("ace/keyboard/ace");
-                    // editor.focus();
                 }else{
                     // on mobile page, use the default text area.
                     \$('#editedText').css('visibility',"visible").css('display',"block");
@@ -110,7 +107,7 @@
             }
 
             if(is_mobile_device){
-                //
+                // do something
             }
 
             // set query value to input if on a search result page.
