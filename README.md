@@ -1,8 +1,8 @@
 # Gitit 介绍及我的实践
 
-Gitit-package: Deploy Gitit by docker, Bootstrap, ace Editor and syntax highlight support.
+gitit package: Deploy Gitit by docker, Bootstrap, ace Editor and syntax highlight support.
 
-基于 Git 和 Markdown 的超棒的 Wiki 系统，Bootstrap、Ace 编辑器等增强。
+基于 Git 和 Markdown 的超棒的 Wiki 系统，Bootstrap、Ace 编辑器等增强，支持 Dockcer 部署。
 
 * Github：[https://github.com/shajiquan/gitit-package](https://github.com/shajiquan/gitit-package)
 * DockreHub：[https://hub.docker.com/r/shajiquan/gitit](https://hub.docker.com/r/shajiquan/gitit)
@@ -24,6 +24,10 @@ cp sample.gitit.conf my-gitit.conf
 ```bash
 docker run -d --name gitit -p 7500:7500 shajiquan/gitit
 ```
+
+## Demo
+
+[http://wiki.shajiquan.com/gitit-package](http://wiki.shajiquan.com/gitit-package) (Read Only)
 
 更多用法详见下文。
 
@@ -195,11 +199,11 @@ git push origin master
 sudo apt-get install gitit
 ```
 
-    注意，目前 `apt-get` 安装的 Gitit 应该还是 0.10.x 版本，而官方目前最新版本是 0.11.x。依我个人经验来看，并无太大差别。但 0.11.x 有个我特别喜欢的新功能：自定义文件名后缀。
+注意，目前 `apt-get` 安装的 Gitit 应该还是 0.10.x 版本，而官方目前最新版本是 0.11.x。依我个人经验来看，并无太大差别。但 0.11.x 有个我特别喜欢的新功能：自定义文件名后缀。
 
-    在 0.10.x 下，即使你在配置文件里设置后缀为 `md`，最后 gitit 生成的文件依然是 `page`。如果使用 .md 的话，无论是用浏览器查看，还是用 OS 的编辑器打开时，可能效果都更好。
+在 0.10.x 下，即使你在配置文件里设置后缀为 `md`，最后 gitit 生成的文件依然是 `page`。如果使用 .md 的话，无论是用浏览器查看，还是用 OS 的编辑器打开时，可能效果都更好。
 
-    但是，如果要安装 0.11.x，请做好时间上的准备，这个安装过程非常耗时、费力（也许是在下愚笨，如有好方法，还望告知我）。
+但是，如果要安装 0.11.x，请做好时间上的准备，这个安装过程非常耗时、费力（也许是在下愚笨，如有好方法，还望告知我）。
 
 ### 使用 cabal
 ```bash
@@ -425,6 +429,7 @@ Gitit 服务启用时将自动创建如下目录（如果它们不存在） :
 # Links
 * [shajiquan/gitit](https://github.com/shajiquan/gitit-package): [https://github.com/shajiquan/gitit-package](https://github.com/shajiquan/gitit-package)
 * [shajiquan/gitit-docker](https://github.com/shajiquan/gitit-docker): [https://github.com/shajiquan/gitit-docker](https://github.com/shajiquan/gitit-docker)
+* [wiki.shajiquan.com(read only)](https://wiki.shajiquan.com/gitit-package): [http://wiki.shajiquan.com/gitit-package](http://wiki.shajiquan.com/gitit-package)
 * [在Archlinux上部署gitit Wiki](http://www.360doc.com/content/12/0518/21/21412_211977928.shtml): [http://www.360doc.com/content/12/0518/21/21412_211977928.shtml](http://www.360doc.com/content/12/0518/21/21412_211977928.shtml)
 * [Gitit - git based wiki](http://walkingice.blogspot.hk/2011/11/gitit-git-based-wiki.html): [http://walkingice.blogspot.hk/2011/11/gitit-git-based-wiki.html](http://walkingice.blogspot.hk/2011/11/gitit-git-based-wiki.html)
 * [Hyzual/docker-gitit](https://github.com/Hyzual/docker-gitit): [https://github.com/Hyzual/docker-gitit](https://github.com/Hyzual/docker-gitit)
