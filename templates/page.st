@@ -46,7 +46,7 @@
         <script src="$base$/js/jquery.min.js"></script>
         <script src="$base$/js/bootstrap.min.js"></script>
         <script src="$base$/js/jquery-ui-1.10.4.custom.min.js"></script>
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="http://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="$base$/js/gitit.min.js"></script>
 
         $expire()$
