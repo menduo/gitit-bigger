@@ -428,9 +428,11 @@ Gitit 服务启用时将自动创建如下目录（如果它们不存在） :
 
 
 # Links
-* [shajiquan/gitit](https://github.com/shajiquan/gitit-package): [https://github.com/shajiquan/gitit-package](https://github.com/shajiquan/gitit-package)
-* [shajiquan/gitit-docker](https://github.com/shajiquan/gitit-docker): [https://github.com/shajiquan/gitit-docker](https://github.com/shajiquan/gitit-docker)
-* [wiki.shajiquan.com(read only)](https://wiki.shajiquan.com/gitit-package): [http://wiki.shajiquan.com/gitit-package](http://wiki.shajiquan.com/gitit-package)
-* [在Archlinux上部署gitit Wiki](http://www.360doc.com/content/12/0518/21/21412_211977928.shtml): [http://www.360doc.com/content/12/0518/21/21412_211977928.shtml](http://www.360doc.com/content/12/0518/21/21412_211977928.shtml)
-* [Gitit - git based wiki](http://walkingice.blogspot.hk/2011/11/gitit-git-based-wiki.html): [http://walkingice.blogspot.hk/2011/11/gitit-git-based-wiki.html](http://walkingice.blogspot.hk/2011/11/gitit-git-based-wiki.html)
-* [Hyzual/docker-gitit](https://github.com/Hyzual/docker-gitit): [https://github.com/Hyzual/docker-gitit](https://github.com/Hyzual/docker-gitit)
+* Github：[https://github.com/shajiquan/gitit-package](https://github.com/shajiquan/gitit-package)
+* DockreHub：[https://hub.docker.com/r/shajiquan/gitit](https://hub.docker.com/r/shajiquan/gitit)
+* Demo: [http://wiki.shajiquan.com/gitit-package](http://wiki.shajiquan.com/gitit-package) (Read Only)
+* gitit official site: [http://gitit.net](http://gitit.net)
+* gitit official github: [https://github.com/jgm/gitit](https://github.com/jgm/gitit)
+* 在Archlinux上部署gitit Wiki: [http://www.360doc.com/content/12/0518/21/21412_211977928.shtml](http://www.360doc.com/content/12/0518/21/21412_211977928.shtml)
+* Gitit - git based wiki: [http://walkingice.blogspot.hk/2011/11/gitit-git-based-wiki.html](http://walkingice.blogspot.hk/2011/11/gitit-git-based-wiki.html)
+* Hyzual/docker-gitit: [https://github.com/Hyzual/docker-gitit](https://github.com/Hyzual/docker-gitit)
