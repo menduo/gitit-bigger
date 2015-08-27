@@ -2,7 +2,7 @@
 
 Gitit package: Git and Markdown based wiki,Bootstrap, ace Editor, syntax highlight and docker deploy support.
 
-基于 Git 和 Markdown 的超棒的 Wiki 系统，Bootstrap、Ace 编辑器等增强，支持 Dockcer 部署。
+基于 Git 和 Markdown 的超棒的 Wiki 系统，Bootstrap、Ace 编辑器等增强，支持 Docker 部署。
 
 * Github：[https://github.com/shajiquan/gitit-package](https://github.com/shajiquan/gitit-package)
 * DockreHub：[https://hub.docker.com/r/shajiquan/gitit](https://hub.docker.com/r/shajiquan/gitit)
