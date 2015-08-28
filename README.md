@@ -1,4 +1,7 @@
-# Gitit 介绍及我的实践
+# Gitit package: 最好的个人Wiki/文档方案（Git、Markdown、Bootstrap、Ace、Docker）
+
+> *文章略长，包括诸多环节。如果只想快速开始一个项目，请参考 `Quick Start` 小节。*
+> *如有改动，将会第一时间在 [http://wiki.shajiquan.com/gitit-package](http://wiki.shajiquan.com/gitit-package) 体现。*
 
 Gitit package: Git and Markdown based wiki,Bootstrap, ace Editor, syntax highlight and docker deploy support.
 
@@ -43,6 +46,7 @@ docker run -d --name gitit -p 7500:7500 shajiquan/gitit
 # 主要特性：
 * 无数据库
 * Git 版本控制
+* Markdown 格式
 * Wiki 化：
     * 子目录，无限目录（这也是我抛弃其他一些类似 wiki 系统的原因）
     * 中文目录、中文标题、中文分类
