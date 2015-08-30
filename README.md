@@ -1,23 +1,23 @@
-# Gitit package: 最好的个人Wiki/文档方案（Git、Markdown、Bootstrap、Ace、Docker）
+# Gitit Bigger: 最好的个人Wiki/文档方案（Git、Markdown、Bootstrap、Ace、Docker）
 
 > *文章略长，包括诸多环节。如果只想快速开始一个项目，请参考 `Quick Start` 小节。*
-> *如有改动，将会第一时间在 [http://wiki.shajiquan.com/gitit-package](http://wiki.shajiquan.com/gitit-package) 体现。*
+> *如有改动，将会第一时间在 [http://wiki.shajiquan.com/gitit-bigger](http://wiki.shajiquan.com/gitit-bigger) 体现。*
 
-Gitit package: Git and Markdown based wiki,Bootstrap, ace Editor, syntax highlight and docker deploy support.
+Gitit Bigger: Git and Markdown based wiki,Bootstrap, ace Editor, syntax highlight and docker deploy support.
 
 基于 Git 和 Markdown 的超棒的 Wiki 系统，Bootstrap、Ace 编辑器等增强，支持 Docker 部署。
 
-* Github：[https://github.com/shajiquan/gitit-package](https://github.com/shajiquan/gitit-package)
+* Github：[https://github.com/shajiquan/gitit-bigger](https://github.com/shajiquan/gitit-bigger)
 * DockreHub：[https://hub.docker.com/r/shajiquan/gitit](https://hub.docker.com/r/shajiquan/gitit)
-* Demo: [http://wiki.shajiquan.com/gitit-package](http://wiki.shajiquan.com/gitit-package) (Read Only)
+* Demo: [http://wiki.shajiquan.com/gitit-bigger](http://wiki.shajiquan.com/gitit-bigger) (Read Only)
 
 
 # Quick Start
 
-## 普通版 Package Version
+## 普通版 bigger Version
 
 ```bash
-git clone https://github.com/shajiquan/gitit-package ~/workspace/gitit
+git clone https://github.com/shajiquan/gitit-bigger ~/workspace/gitit
 cd ~/workspace/gitit
 cp sample.gitit.conf my-gitit.conf
 ./run/run.sh start
@@ -31,7 +31,7 @@ docker run -d --name gitit -p 7500:7500 shajiquan/gitit
 
 ## Demo
 
-[http://wiki.shajiquan.com/gitit-package](http://wiki.shajiquan.com/gitit-package) (Read Only)
+[http://wiki.shajiquan.com/gitit-bigger](http://wiki.shajiquan.com/gitit-bigger) (Read Only)
 
 更多用法详见下文。
 
@@ -267,7 +267,7 @@ git config --global user.email Your Email
 
 ## clone 我的 gitit 项目
 ```bash
-git clone https://github.com/shajiquan/gitit-package ~/workspace/gitit
+git clone https://github.com/shajiquan/gitit-bigger ~/workspace/gitit
 cd ~/workspace/gitit
 git branch --set-upstream-to=origin/master master
 cp sample.gitit.conf my-gitit.conf
@@ -432,9 +432,9 @@ Gitit 服务启用时将自动创建如下目录（如果它们不存在） :
 
 
 # Links
-* Github：[https://github.com/shajiquan/gitit-package](https://github.com/shajiquan/gitit-package)
+* Github：[https://github.com/shajiquan/gitit-bigger](https://github.com/shajiquan/gitit-bigger)
 * DockreHub：[https://hub.docker.com/r/shajiquan/gitit](https://hub.docker.com/r/shajiquan/gitit)
-* Demo: [http://wiki.shajiquan.com/gitit-package](http://wiki.shajiquan.com/gitit-package) (Read Only)
+* Demo: [http://wiki.shajiquan.com/gitit-bigger](http://wiki.shajiquan.com/gitit-bigger) (Read Only)
 * gitit official site: [http://gitit.net](http://gitit.net)
 * gitit official github: [https://github.com/jgm/gitit](https://github.com/jgm/gitit)
 * 在Archlinux上部署gitit Wiki: [http://www.360doc.com/content/12/0518/21/21412_211977928.shtml](http://www.360doc.com/content/12/0518/21/21412_211977928.shtml)
