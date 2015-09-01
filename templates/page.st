@@ -70,6 +70,8 @@
                 \$(item).addClass('btn btn-default btn-sm');
             });
 
+            \$('table').each(function(idx,item){\$(item).addClass('table table-bordered table-hover')});
+
             // detect device type
             var is_phone = isMobile.phone;
             var is_tablet = isMobile.tablet;
