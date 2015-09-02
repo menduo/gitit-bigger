@@ -21,6 +21,13 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-10 " id="maincol">
+
+                <div class="">
+                    <ol id="breadcrumb" class="breadcrumb">
+                      <li><a href="/" class="active">Home</a></li>
+                    </ol>
+                </div>
+
                     <div class="hidden-print">
                         $userbox()$
                         <div id="page-tabs">
@@ -54,6 +61,7 @@
 
         <script src="$base$/js/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
         <script src="$base$/js/isMobile.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="$base$/js/gen_breadcrumb.js" type="text/javascript" charset="utf-8"></script>
         <script>
 
         function getParam(n) {
@@ -80,6 +88,8 @@
             var is_mobile_device = is_phone || is_tablet || is_seven_inch;
 
             var ta = document.getElementById("editedText"); // get editor text area
+
+            var pathname = location.pathname;
 
             if(ta){
                 // if is on an edit page.
@@ -113,7 +123,7 @@
             }
 
             // set query value to input if on a search result page.
-            if (location.pathname == "/_search"){
+            if (pathname == "/_search"){
                 var search_text = getParam('patterns');
                 if(search_text && search_text != ""){
                     \$('.input-search-form').each(function(idx,item){
@@ -136,6 +146,8 @@
                 \$('html, body').animate({ scrollTop: 0 }, 100);
                 return false;
             });
+
+
 
 
         });

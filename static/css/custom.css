@@ -120,7 +120,13 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     border-bottom: 1px solid #ECEAEA;
     padding-bottom: 5px;
+}
 
+blockquote {
+    padding: 5px 20px;
+    margin: 0px 0 10px;
+    font-size: 90%;
+    border-left: 5px solid #eee;
 }
 
 
