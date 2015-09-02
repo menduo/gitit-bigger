@@ -28,6 +28,12 @@
 
     var plist = pathname.split('/');
     plist.shift();
+
+    if (plist[plist.length-1]==""){
+        plist.pop();
+    }
+
+
     var pfirst = plist[0];
     var is_action = actions.indexOf(pfirst) >=0;
     var pagenames = plist.slice(0,plist.length);
@@ -50,12 +56,21 @@
     }
 
     function gen_item(item){
-        var path = gen_path(item);
+        var path = "/"+gen_path(item);
+
         var a = $('<a/>');
-        $(a).text(item).attr('href','/'+ path).attr('title', item);
-        var item = $('<li/>');
-        $(item).append(a);
-        $(breadcrumb).append($(item));
+        $(a).text(item).attr('href', path).attr('title', item);
+
+        var li_ele = $('<li/>');
+        $(li_ele).append(a);
+
+        if (pagenames.indexOf(item) != pagenames.length-1){
+            var d = $('<span class="text-muted"> (<a href="" class="text-muted" title="go to dir but not page">d</a>)</span>');
+            $(d).find("a").attr("href", path+"/");
+            $(li_ele).append(d);
+        }
+
+        $(breadcrumb).append($(li_ele));
         return true;
     }
 
