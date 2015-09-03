@@ -59,7 +59,7 @@
         var path = "/"+gen_path(item);
 
         var a = $('<a/>');
-        $(a).text(item).attr('href', path).attr('title', item);
+        $(a).text(decodeURI(item)).attr('href', path).attr('title', decodeURI(item));
 
         var li_ele = $('<li/>');
         $(li_ele).append(a);
