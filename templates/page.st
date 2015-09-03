@@ -53,6 +53,7 @@
         <script src="$base$/js/jquery.min.js"></script>
         <script src="$base$/js/bootstrap.min.js"></script>
         <script src="$base$/js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script src="$base$/js/isMobile.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="http://cdn.bootcss.com/mathjax/2.5.3/MathJax.js"></script>
         <script src="$base$/js/gitit.min.js"></script>
 
@@ -60,103 +61,202 @@
         $getuser()$
 
         <script src="$base$/js/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
-        <script src="$base$/js/isMobile.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="$base$/js/gen_breadcrumb.js" type="text/javascript" charset="utf-8"></script>
+
+        <div class="hide page-more-scripts">
+            $page_more_scripts()$
+        </div>
+
         <script>
 
-        function getParam(n) {
-                // get param value from url.
-                var half = location.search.split('&' + n + '=')[1];
-                if (!half) half = location.search.split('?' + n + '=')[1];
-                return half !== undefined ? decodeURIComponent(half.split('&')[0]) : null;
-        }
+            function getParam(n) {
+                    // get param value from url.
+                    var half = location.search.split('&' + n + '=')[1];
+                    if (!half) half = location.search.split('?' + n + '=')[1];
+                    return half !== undefined ? decodeURIComponent(half.split('&')[0]) : null;
+            }
+
+            function setShortcuts (editor, snippetManager) {
+                // snippets from https://github.com/shajiquan/bootstrap-markdown-editor/blob/master/src/bootstrap-markdown-editor.js
+                editor.commands.addCommand({
+                    name: 'bold',
+                    bindKey: {win: 'Ctrl-B',  mac: 'Command-B'},
+                    exec: function (editor) {
+                        var selectedText = editor.session.getTextRange(editor.getSelectionRange());
+
+                        if (selectedText === '') {
+                            snippetManager.insertSnippet(editor, '**\${1:text}**');
+                        } else {
+                            snippetManager.insertSnippet(editor, '**' + selectedText + '**');
+                        }
+                    },
+                    readOnly: false
+                });
+
+                editor.commands.addCommand({
+                    name: 'italic',
+                    bindKey: {win: 'Ctrl-I',  mac: 'Command-I'},
+                    exec: function (editor) {
+                        var selectedText = editor.session.getTextRange(editor.getSelectionRange());
+
+                        if (selectedText === '') {
+                            snippetManager.insertSnippet(editor, '*\${1:text}*');
+                        } else {
+                            snippetManager.insertSnippet(editor, '*' + selectedText + '*');
+                        }
+                    },
+                    readOnly: false
+                });
+
+                editor.commands.addCommand({
+                    name: 'link',
+                    bindKey: {win: 'Ctrl-SHIFT-K',  mac: 'Command-SHIFT-K'},
+                    exec: function (editor) {
+                        var selectedText = editor.session.getTextRange(editor.getSelectionRange());
+
+                        if (selectedText === '') {
+                            snippetManager.insertSnippet(editor, '[\${1:text}](http://\$2)');
+                        } else {
+                            snippetManager.insertSnippet(editor, '[' + selectedText + '](http://\$1)');
+                        }
+                    },
+                    readOnly: false
+                });
+
+                editor.commands.addCommand({
+                    name: 'link',
+                    bindKey: {win: 'Ctrl-L',  mac: 'Command-L'},
+                    exec: function (editor) {
+                        var selectedText = editor.session.getTextRange(editor.getSelectionRange());
+
+                        if (selectedText === '') {
+                            snippetManager.insertSnippet(editor, '[\${1:text}](http://\$2)');
+                        } else {
+                            snippetManager.insertSnippet(editor, '[' + selectedText + '](http://\$1)');
+                        }
+                    },
+                    readOnly: false
+                });
+
+
+                editor.commands.addCommand({
+                    name: 'image',
+                    bindKey: {win: 'Ctrl-I',  mac: 'Ctrl-I'},
+                    exec: function (editor) {
+                        var selectedText = editor.session.getTextRange(editor.getSelectionRange());
+
+                        if (selectedText === '') {
+                            snippetManager.insertSnippet(editor, '![\${1:Image Description}](http://\$2)');
+                        } else {
+                            snippetManager.insertSnippet(editor, '![' + selectedText + '](http://\$1)');
+                        }
+                    },
+                    readOnly: false
+                });
+
+
+                editor.commands.addCommand({
+                    name: 'iline-code',
+                    bindKey: {win: 'Ctrl-K',  mac: 'Command-K'},
+                    exec: function (editor) {
+                        var selectedText = editor.session.getTextRange(editor.getSelectionRange());
+
+                        if (selectedText === '') {
+                            snippetManager.insertSnippet(editor, '`\${1:text}`');
+                        } else {
+                            snippetManager.insertSnippet(editor, '`' + selectedText + '`');
+                        }
+                    },
+                    readOnly: false
+                });
+            }
+
 
         \$(document).ready(function(){
-
-            // update buttons or inputs into bootstrap style.
-            \$('input[type="submit"], input[type="button"]').each(function(idx,item){
-                \$(item).addClass('btn btn-default btn-sm');
-            });
-
-            \$('table').each(function(idx,item){\$(item).addClass('table table-bordered table-hover')});
 
             // detect device type
             var is_phone = isMobile.phone;
             var is_tablet = isMobile.tablet;
             var is_seven_inch = isMobile.seven_inch;
-
             var is_mobile_device = is_phone || is_tablet || is_seven_inch;
-
             var ta = document.getElementById("editedText"); // get editor text area
 
-            var pathname = location.pathname;
+            function _get_ace_editor_settings(){
+                if(typeof(BIGGER_WITH_ACE) != 'object' ){
+                    BIGGER_WITH_ACE = {
+                        "enable": true,
+                        "enable_markdown_shortcuts": true,
+                        "setTheme": "ace/theme/github",
+                        "setMode": "ace/mode/markdown",
+                        "setShowPrintMargin":false,
+                        "setShowGutter": false,
+                        "setUseWrapMode":true,
+                        "fontsize": "13px",
+                    }
 
-            if(ta){
-                // if is on an edit page.
+                    return BIGGER_WITH_ACE;
+                }
+                return null;
+            }
 
-                // update summary notice.
-                var logMsg = document.getElementById("logMsg");
-                logMsg.setAttribute("placeholder", "Edit summary (Briefly describe your changes)")
 
-                if (!is_mobile_device){
+            function init_ace_editor(ta, ace_settings){
                     // Enable ace editor if current device is not a mobile.
                     var editorDiv = document.createElement("div");
                     editorDiv.setAttribute("id", "editor");
                     ta.parentNode.insertBefore(editorDiv, ta.nextSibling);
+
+                    document.getElementById('editor').style.fontSize = ace_settings.fontsize || "13px";
+                    document.getElementById('editor').style.color = "#333";
+                    document.getElementById('editor').style.fontWeight = "normal";
+
                     var editor = ace.edit(editorDiv);
+                    editor.\$blockScrolling = Infinity;
+
                     editor.getSession().setValue(ta.value);
                     editor.getSession().on('change', function(){
                       ta.value = editor.getSession().getValue();
                     });
-                    editor.setTheme("ace/theme/github");
-                    editor.getSession().setMode("ace/mode/markdown");
-                    editor.setShowPrintMargin(false);
-                    editor.getSession().setUseWrapMode(true);
+
+                    editor.setTheme(ace_settings.setTheme || "ace/theme/github");
+                    editor.getSession().setMode(ace_settings.setMode || "ace/mode/markdown");
+                    editor.setShowPrintMargin(ace_settings.setShowPrintMargin || false);
+                    editor.getSession().setUseWrapMode(ace_settings.setUseWrapMode || true);
+                    editor.renderer.setShowGutter(ace_settings.setShowGutter || false);
+
+
+                    if(!ace_settings.enable_markdown_shortcuts || ace_settings.enable_markdown_shortcuts == true){
+                        editor.commands.bindKey("Command-L", null);
+                        editor.commands.bindKey("Ctrl-L", null);
+
+                        ace.config.loadModule('ace/ext/language_tools', function () {
+                            snippetManager = ace.require('ace/snippets').snippetManager;
+                            setShortcuts(editor, snippetManager);
+                        });
+                    }
+            }
+
+            if(ta){
+                // if is on an edit page.
+                // update summary notice.
+                var logMsg = document.getElementById("logMsg");
+                logMsg.setAttribute("placeholder", "Edit summary (Briefly describe your changes)")
+
+                var _bigger_ace_setting = _get_ace_editor_settings()
+
+                if (!is_mobile_device && _bigger_ace_setting!=null){
+                        init_ace_editor(ta, _bigger_ace_setting);
+
                 }else{
                     // on mobile page, use the default text area.
                     \$('#editedText').css('visibility',"visible").css('display',"block");
                 }
             }
 
-            if(is_mobile_device){
-                // do something
-            }
-
-            // set query value to input if on a search result page.
-            if (pathname == "/_search"){
-                var search_text = getParam('patterns');
-                if(search_text && search_text != ""){
-                    \$('.input-search-form').each(function(idx,item){
-                        \$(item).val(search_text)
-                    });
-                }
-            }
-
-            // scroll to top button
-            var scrollup = \$('.scrollup');
-            \$(scrollup).hide();
-            \$(window).scroll(function () {
-                if (\$(this).scrollTop() > 100) {
-                    \$(scrollup).fadeIn();
-                } else {
-                    \$(scrollup).fadeOut();
-                }
-            });
-            \$(scrollup).on,("click",function () {
-                \$('html, body').animate({ scrollTop: 0 }, 100);
-                return false;
-            });
-
-
-
-
         });
         </script>
 
 
-        <div class="hide page-more-scripts">
-            $page_more_scripts()$
-        </div>
 
     </body>
 </html>
