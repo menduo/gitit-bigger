@@ -110,21 +110,6 @@
 
                 editor.commands.addCommand({
                     name: 'link',
-                    bindKey: {win: 'Ctrl-SHIFT-K',  mac: 'Command-SHIFT-K'},
-                    exec: function (editor) {
-                        var selectedText = editor.session.getTextRange(editor.getSelectionRange());
-
-                        if (selectedText === '') {
-                            snippetManager.insertSnippet(editor, '[\${1:text}](http://\$2)');
-                        } else {
-                            snippetManager.insertSnippet(editor, '[' + selectedText + '](http://\$1)');
-                        }
-                    },
-                    readOnly: false
-                });
-
-                editor.commands.addCommand({
-                    name: 'link',
                     bindKey: {win: 'Ctrl-L',  mac: 'Command-L'},
                     exec: function (editor) {
                         var selectedText = editor.session.getTextRange(editor.getSelectionRange());
@@ -132,7 +117,12 @@
                         if (selectedText === '') {
                             snippetManager.insertSnippet(editor, '[\${1:text}](http://\$2)');
                         } else {
-                            snippetManager.insertSnippet(editor, '[' + selectedText + '](http://\$1)');
+                            if(selectedText.search('http://') == 0){
+                                snippetManager.insertSnippet(editor, '[' + selectedText + ']('+selectedText+')');
+                            }else{
+                                snippetManager.insertSnippet(editor, '[' + selectedText + '](http://\$1)');
+                            }
+
                         }
                     },
                     readOnly: false
@@ -169,6 +159,23 @@
                     },
                     readOnly: false
                 });
+
+
+                editor.commands.addCommand({
+                    name: 'code',
+                    bindKey: {win: 'Ctrl-Shift-K',  mac: 'Command-Shift-K'},
+                    exec: function (editor) {
+                        var selectedText = editor.session.getTextRange(editor.getSelectionRange());
+
+                        if (selectedText === '') {
+                            snippetManager.insertSnippet(editor, '```\${1:text}```');
+                        } else {
+                            snippetManager.insertSnippet(editor, '```' + selectedText + '```');
+                        }
+                    },
+                    readOnly: false
+                });
+
             }
 
 
@@ -244,9 +251,8 @@
 
                 var _bigger_ace_setting = _get_ace_editor_settings()
 
-                if (!is_mobile_device && _bigger_ace_setting!=null){
+                if (!is_mobile_device && _bigger_ace_setting!=null && _bigger_ace_setting.enable == true){
                         init_ace_editor(ta, _bigger_ace_setting);
-
                 }else{
                     // on mobile page, use the default text area.
                     \$('#editedText').css('visibility',"visible").css('display',"block");
