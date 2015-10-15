@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Gitit-bigger by shajiquan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Gitit-bigger</h1>
+      <h2 class="project-tagline">Gitit Bigger: 最好的个人Wiki/文档方案（Git、Markdown、Bootstrap、Ace、Docker）</h2>
+      <a href="https://github.com/shajiquan/gitit-bigger" class="btn">View on GitHub</a>
+      <a href="https://github.com/shajiquan/gitit-bigger/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/shajiquan/gitit-bigger/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="gitit-bigger-最好的个人wiki文档方案gitmarkdownbootstrapacedocker" class="anchor" href="#gitit-bigger-%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%AA%E4%BA%BAwiki%E6%96%87%E6%A1%A3%E6%96%B9%E6%A1%88gitmarkdownbootstrapacedocker" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gitit Bigger: 最好的个人Wiki/文档方案（Git、Markdown、Bootstrap、Ace、Docker）</h1>
+
+<blockquote>
+<p><em>文章略长，包括诸多环节。如果只想快速开始一个项目，请参考 <code>Quick Start</code> 小节。</em>
+<em>如有改动，将会第一时间在 <a href="http://wiki.shajiquan.com/gitit-bigger">http://wiki.shajiquan.com/gitit-bigger</a> 体现。</em></p>
+</blockquote>
+
+<p>Gitit Bigger: Git and Markdown based wiki,Bootstrap, ace Editor, syntax highlight and docker deploy support.</p>
+
+<p>基于 Git 和 Markdown 的超棒的 Wiki 系统，Bootstrap、Ace 编辑器等增强，支持 Docker 部署。</p>
+
+<ul>
+<li>Github：<a href="https://github.com/shajiquan/gitit-bigger">https://github.com/shajiquan/gitit-bigger</a>
+</li>
+<li>DockreHub：<a href="https://hub.docker.com/r/shajiquan/gitit">https://hub.docker.com/r/shajiquan/gitit</a>
+</li>
+<li>Demo: <a href="http://wiki.shajiquan.com/gitit-bigger">http://wiki.shajiquan.com/gitit-bigger</a> (Read Only)</li>
+</ul>
+
+<h1>
+<a id="quick-start" class="anchor" href="#quick-start" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quick Start</h1>
+
+<h2>
+<a id="普通版-bigger-version" class="anchor" href="#%E6%99%AE%E9%80%9A%E7%89%88-bigger-version" aria-hidden="true"><span class="octicon octicon-link"></span></a>普通版 bigger Version</h2>
+
+<div class="highlight highlight-source-shell"><pre>git clone https://github.com/shajiquan/gitit-bigger <span class="pl-k">~</span>/workspace/gitit
+<span class="pl-c1">cd</span> <span class="pl-k">~</span>/workspace/gitit
+cp sample.gitit.conf my-gitit.conf
+./run/run.sh start</pre></div>
+
+<h2>
+<a id="docker-版-docker-version" class="anchor" href="#docker-%E7%89%88-docker-version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Docker 版 Docker Version</h2>
+
+<div class="highlight highlight-source-shell"><pre>docker run -d --name gitit -p 7500:7500 shajiquan/gitit</pre></div>
+
+<h2>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h2>
+
+<p><a href="http://wiki.shajiquan.com/gitit-bigger">http://wiki.shajiquan.com/gitit-bigger</a> (Read Only)</p>
+
+<p>更多用法详见下文。</p>
+
+<h1>
+<a id="gitit" class="anchor" href="#gitit" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gitit</h1>
+
+<p>一个基于 Git 版本管理系统的 Wiki，使用 Haskell 语言编写。</p>
+
+<ul>
+<li>官网：<a href="http://gitit.net">http://gitit.net</a>
+</li>
+<li>Github：<a href="http://github.com/jgm/gitit">http://github.com/jgm/gitit</a>
+</li>
+</ul>
+
+<h1>
+<a id="主要特性" class="anchor" href="#%E4%B8%BB%E8%A6%81%E7%89%B9%E6%80%A7" aria-hidden="true"><span class="octicon octicon-link"></span></a>主要特性：</h1>
+
+<ul>
+<li>无数据库</li>
+<li>Git 版本控制</li>
+<li>Markdown 格式</li>
+<li>Wiki 化：
+
+<ul>
+<li>子目录，无限目录（这也是我抛弃其他一些类似 wiki 系统的原因）</li>
+<li>中文目录、中文标题、中文分类</li>
+<li>完美支持中文搜索</li>
+<li>支持分类</li>
+<li>支持自定义标题</li>
+</ul>
+</li>
+<li>代码高亮</li>
+<li>支持公式等（我基本不用）</li>
+<li>导出 epub 等（基于 pandoc）</li>
+</ul>
+
+<h1>
+<a id="配置文件及执行流程" class="anchor" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8F%8A%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a>配置文件及执行流程</h1>
+
+<p>在任意文件夹内运行 <code>gitit</code> 都可以启动 gitit 服务。可以给 gitit 传递如下参数：</p>
+
+<ul>
+<li>
+<code>-p</code>: gitit web 服务端口号</li>
+<li>
+<code>-f</code>: 指定一个配置文件，gitit 会解析配置文件中的 <code>port</code> 等配置来启动服务。比如： <code>gitit -f my-gitit.conf</code>。
+
+<ul>
+<li>如果不指定，gitit 将会使用默认配置，默认配置可由 <code>gitit --print-default-config &gt; my-gitit.conf</code> 获得。</li>
+</ul>
+</li>
+</ul>
+
+<p>在 gitit 启动服务时，它会根据配置文件来绑定 IP、端口，创建必要的文件夹、文件等。</p>
+
+<ul>
+<li>
+<code>static/</code> : 静态文件所在目录</li>
+<li>
+<code>templates/</code>: 模板文件所在目录</li>
+<li>
+<code>wikidata</code>: wiki 条目文件所在目录</li>
+<li>
+<code>gitit-users</code>: 用户数据所在文件</li>
+<li>
+<code>gitit.log</code>:  日志文件</li>
+</ul>
+
+<p>以上这些项，都可以在配置文件中自定义，不过我建议使用官方默认的。以下是一些重要配置项。</p>
+
+<h2>
+<a id="重要配置项" class="anchor" href="#%E9%87%8D%E8%A6%81%E9%85%8D%E7%BD%AE%E9%A1%B9" aria-hidden="true"><span class="octicon octicon-link"></span></a>重要配置项</h2>
+
+<ul>
+<li>
+<code>port</code>: 7500 # Gitit Web Server 的端口号，官方默认是 5001，我自己用的配置是 7005。</li>
+<li>
+<code>wiki-title</code>: Wiki # the title of the wiki.</li>
+<li>
+<code>require-authentication: modify</code>: #授权阶段。可选 <code>none</code>、<code>modify</code>、<code>read</code>：
+
+<ul>
+<li>
+<code>none</code>: 所有阶段（编辑、浏览等）都 <code>不需要</code> 用户登录。</li>
+<li>
+<code>modify</code>: 编辑阶段。当用户要编辑、删除条目时，需要登录。</li>
+<li>
+<code>read</code>：阅读阶段。当用户需要浏览条目时，需要登录。</li>
+</ul>
+</li>
+<li>
+<code>access-question</code>: Who is shajiquan? # 访问控制问题。
+
+<ul>
+<li>在创建用户时，将必须回答这个问题。答案必须是下方的 <code>access-question-answers</code> 中指定的答案，答案间使用英文逗号分隔。</li>
+</ul>
+</li>
+<li>
+<code>access-question-answers</code>: <a href="https://github.com/shajiquan">github.com/shajiquan</a>, <a href="https://github.com/shajiquan">https://github.com/shajiquan</a>
+</li>
+<li>
+<code>default-extension</code>: md # 默认文件名扩展，官方默认的是 <code>page</code>，我自己的版本使用的是 <code>md</code>。
+
+<ul>
+<li>
+<code>注意</code>：这个只在 Gitit 0.11.x 上才有作用，这意味着，当你使用 0.10.x 时，即使配置了默认扩展为 <code>md</code>，最后创建的文件，其扩展名仍然是 <code>page</code>。</li>
+</ul>
+</li>
+<li>
+<code>default-page-type</code>: Markdown # 默认页面类型</li>
+<li>
+<code>front-page</code>: index # 首页文件</li>
+<li>
+<code>no-edit</code>: Help # 禁止编辑的页面, 逗号分隔</li>
+<li>
+<code>no-delete</code>: index, Front Page, Help # 禁止删除的页面/文件，逗号分隔</li>
+<li>
+<code>default-summary</code>: automatically added commit message. # 默认编辑摘要，为空时，编辑一个条目时，如果不输入编辑摘要，Gitit 就会返回错误，要求必须手动输入。</li>
+<li>
+<strong>授权相关</strong>：gitit 支持 github 接入，但我没有使用，也没有研究。</li>
+<li>
+<strong>安全相关</strong>: gitit 默认使用 html 表单认证，而非 HTTP 方式，gitit 默认也启用了防跨站攻击。这里不再详细说明，我直接使用的是默认配置。</li>
+</ul>
+
+<h2>
+<a id="其他配置项" class="anchor" href="#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE%E9%A1%B9" aria-hidden="true"><span class="octicon octicon-link"></span></a>其他配置项</h2>
+
+<p>其他一些配置项，在我自己使用时，有的做了更改（如文件和页面体积），有的则使用默认的。</p>
+
+<ul>
+<li>
+<code>table-of-contents</code>: yes # 是否默认使用 toc 目录，可选项：yes、no。可在页面内配置，见下方 <code>页面内配置</code>
+</li>
+<li>
+<code>repository-type</code>: <code>Git</code> # 指定版本控制系统。默认是 Git，可选项有：<code>Git</code>、<code>Darcs</code> 及 <code>Mercurial</code>。
+
+<ul>
+<li>
+<code>注意</code>：无论使用何种版本控制系统，运行 Gitit 的宿主 OS 上都必须先安装它。</li>
+</ul>
+</li>
+<li>
+<code>repository-path</code>: wikidata # 指定仓库地址，也即 wiki 条目所在的文件夹。
+
+<ul>
+<li>相对路径。相对于运行 <code>gitit -f my-gitit.conf</code> 时所在的文件夹。</li>
+<li>如果指定文件夹不存在，gitit 将在启用服务时自动创建。</li>
+<li>建议不要更改。</li>
+</ul>
+</li>
+<li>
+<code>use-recaptcha</code>，<code>recaptcha-private-key</code>、<code>recaptcha-public-key</code> # 是否使用 recaptcha，如要使用，还要配置相关 key。</li>
+<li>
+<code>use-feed</code>: no # 是否启用 feed。feed 还有其他相关配置，比如更新时间等，详情请参阅配置文件内说明。</li>
+<li>
+<code>pdf-export</code>: no # 是否支持 pdf 导出，这需要 pandoc 或其他插件支持，详情请参阅配置文件内说明。</li>
+<li>
+<code>max-upload-size</code>:4096K # 最大文件上传尺寸。</li>
+<li>
+<code>max-page-size: 1024K</code> # 页面最大尺寸。</li>
+</ul>
+
+<h2>
+<a id="页面内配置" class="anchor" href="#%E9%A1%B5%E9%9D%A2%E5%86%85%E9%85%8D%E7%BD%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>页面内配置</h2>
+
+<p>gitit 支持在编辑页面时来配置当前页面。</p>
+
+<h3>
+<a id="可用选项" class="anchor" href="#%E5%8F%AF%E7%94%A8%E9%80%89%E9%A1%B9" aria-hidden="true"><span class="octicon octicon-link"></span></a>可用选项</h3>
+
+<ul>
+<li>
+<code>title</code>: 页面标题</li>
+<li>
+<code>toc</code>: 是否使用 toc。可选项：<code>yes</code>、<code>no</code>。默认为 <code>yes</code>.</li>
+<li>
+<code>categories</code>: 页面所属分类，空格或英文逗号分隔，建议使用英文逗号。</li>
+<li>
+<code>format</code>: 页面格式，比如 <code>markdown</code>，或 <code>markdown+lhs</code>。我只使用 <code>markdown</code>，配置文件里也有指定，因此很少在页面内使用这个配置。</li>
+</ul>
+
+<h3>
+<a id="完整示例" class="anchor" href="#%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a>完整示例</h3>
+
+<div class="highlight highlight-source-gfm"><pre><span class="pl-c">---</span>
+<span class="pl-s"><span class="pl-ent">title:</span> <span class="pl-s">这是一个页面的标题</span></span>
+<span class="pl-s"><span class="pl-ent">toc:</span> <span class="pl-s">yes/no</span></span>
+<span class="pl-s"><span class="pl-ent">categories:</span> <span class="pl-s">Miao, Wu, 分类呢</span></span>
+<span class="pl-s"><span class="pl-ent">format:</span> <span class="pl-s">markdown+lhs</span></span>
+<span class="pl-c">...</span>
+</pre></div>
+
+<p>注意，必须严格按照此格式，否则无效。<code>...</code> 是必须的，<code>:</code> 是英文的。</p>
+
+<h2>
+<a id="通过-shell-来编辑-wiki" class="anchor" href="#%E9%80%9A%E8%BF%87-shell-%E6%9D%A5%E7%BC%96%E8%BE%91-wiki" aria-hidden="true"><span class="octicon octicon-link"></span></a>通过 shell 来编辑 wiki</h2>
+
+<p><code>wikidata</code> 是一个仓库目录，只要该文件夹下的文件被 <code>git add</code> 到仓库并执行了 <code>git commit</code>，gitit 将会把它们当作 wiki 条目加入到系统中。</p>
+
+<p>因此，我们可以通过 shell 下的一系列操作来编辑 wiki。比如：</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">cd</span> /path/to/your/wikidata
+
+touch new_page.md
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>hello shajiquan<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&gt;</span> new_page.md
+
+git add new_pge.md
+git commit -m <span class="pl-s"><span class="pl-pds">"</span>add new_page.md file<span class="pl-pds">"</span></span>
+
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>new line<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&gt;</span> old_page.md
+git add old_page.md
+git commit -m <span class="pl-s"><span class="pl-pds">"</span>update old_page.md <span class="pl-pds">"</span></span>
+
+git push origin master</pre></div>
+
+<h2>
+<a id="缺憾及解决方案" class="anchor" href="#%E7%BC%BA%E6%86%BE%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88" aria-hidden="true"><span class="octicon octicon-link"></span></a>缺憾及解决方案</h2>
+
+<ul>
+<li>
+<strong>界面较丑</strong>：像我这样弄一套 bootstrap 模板；</li>
+<li>
+<strong>无用户管理/限制</strong>：稍差，但如果是私用或者小范围使用，倒也足够。
+
+<ul>
+<li>请参阅 <code>require-authentication</code>、<code>access-question</code>、<code>access-question-answers</code> 配置项。</li>
+<li>创建自己所需要的用户后，可以将项目目录的 <code>gitit-users</code> 文件权限设置为只读。</li>
+</ul>
+</li>
+<li>
+<strong>编辑器较差</strong>：像我这样启用 ace 编辑器即可（markdown 模式）；</li>
+<li>
+<strong>某些更改必须重启才能生效</strong>：如果 gitit 配置文件、模板、静态文件有修改，必须重启 gitit，这很好办，用命名或脚本都可以轻松做到。</li>
+<li>使用 <code>cabal</code> 方式安装最新版本时：
+
+<ul>
+<li>安装麻烦：安装过程比较慢，巨慢。没办法，只能慢慢来。</li>
+<li>安装失败：在某些版本的操作系统上可能会安装失败，因为它的依赖和操作系统的不符。
+
+<ul>
+<li>我没搞定，正巧我有台 ubuntu 主机支持，于是就安装成功了。个人用的 mac 上也成功了。</li>
+<li>如果你没有合适的主机，可以考虑用 docker 来安装。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="文件结构" class="anchor" href="#%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84" aria-hidden="true"><span class="octicon octicon-link"></span></a>文件结构</h2>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">.</span>
+├── gitit-users
+├── gitit.log
+├── my-gitit.conf
+├── static
+│   ├── css
+│   │   └── custom.css
+│   └── img
+│       └── logo.png
+├── templates
+│   └── footer.st
+└── wikidata
+    ├── gitit
+    │   ├── guide.md
+    ├── index.md
+    ├── sandbox.md</pre></div>
+
+<h1>
+<a id="安装" class="anchor" href="#%E5%AE%89%E8%A3%85" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装</h1>
+
+<h2>
+<a id="ubuntudebian" class="anchor" href="#ubuntudebian" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ubuntu/debian</h2>
+
+<h3>
+<a id="使用-apt-get" class="anchor" href="#%E4%BD%BF%E7%94%A8-apt-get" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用 apt-get</h3>
+
+<div class="highlight highlight-source-shell"><pre>sudo apt-get install gitit</pre></div>
+
+<p>注意，目前 <code>apt-get</code> 安装的 Gitit 应该还是 0.10.x 版本，而官方目前最新版本是 0.11.x。依我个人经验来看，并无太大差别。但 0.11.x 有个我特别喜欢的新功能：自定义文件名后缀。</p>
+
+<p>在 0.10.x 下，即使你在配置文件里设置后缀为 <code>md</code>，最后 gitit 生成的文件依然是 <code>page</code>。如果使用 .md 的话，无论是用浏览器查看，还是用 OS 的编辑器打开时，可能效果都更好。</p>
+
+<p>但是，如果要安装 0.11.x，请做好时间上的准备，这个安装过程非常耗时、费力（也许是在下愚笨，如有好方法，还望告知我）。</p>
+
+<h3>
+<a id="使用-cabal" class="anchor" href="#%E4%BD%BF%E7%94%A8-cabal" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用 cabal</h3>
+
+<div class="highlight highlight-source-shell"><pre>sudo apt-get install -y git cabal-install libghc-zlib-dev
+cabal update <span class="pl-k">&amp;&amp;</span> cabal install gitit
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>export PATH=~/.cabal/bin:<span class="pl-smi">$PATH</span><span class="pl-pds">"</span></span> <span class="pl-k">&gt;&gt;</span> <span class="pl-k">~</span>/.bash_profile
+<span class="pl-c1">source</span> <span class="pl-k">~</span>/.bash_profile</pre></div>
+
+<h2>
+<a id="mac-os-x" class="anchor" href="#mac-os-x" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mac OS X</h2>
+
+<div class="highlight highlight-source-shell"><pre>brew update <span class="pl-k">&amp;&amp;</span> brew install cabal-install
+cabal-install install gitit</pre></div>
+
+<h1>
+<a id="部署" class="anchor" href="#%E9%83%A8%E7%BD%B2" aria-hidden="true"><span class="octicon octicon-link"></span></a>部署</h1>
+
+<h2>
+<a id="依配置文件后台运行" class="anchor" href="#%E4%BE%9D%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C" aria-hidden="true"><span class="octicon octicon-link"></span></a>依配置文件&amp;后台运行</h2>
+
+<div class="highlight highlight-source-shell"><pre>nohup gitit -f my-gitit.conf <span class="pl-k">&gt;</span> logs-gitit.log <span class="pl-k">&amp;</span> <span class="pl-c1">echo</span> <span class="pl-smi">$!</span> <span class="pl-k">&gt;</span> pid-my-gitit.conf.pid <span class="pl-k">2&gt;&amp;1</span> <span class="pl-k">&amp;</span></pre></div>
+
+<h2>
+<a id="自动-pullpush" class="anchor" href="#%E8%87%AA%E5%8A%A8-pullpush" aria-hidden="true"><span class="octicon octicon-link"></span></a>自动 Pull/Push</h2>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">*</span> <span class="pl-k">*</span> <span class="pl-k">*</span> <span class="pl-k">*</span> <span class="pl-k">*</span> /path-to/auto-data.sh <span class="pl-k">&gt;</span> /path-to/logs-auto-data.log  <span class="pl-k">2&gt;&amp;1</span> <span class="pl-k">&amp;</span></pre></div>
+
+<h1>
+<a id="使用我的版本" class="anchor" href="#%E4%BD%BF%E7%94%A8%E6%88%91%E7%9A%84%E7%89%88%E6%9C%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用我的版本</h1>
+
+<p>我的版本做了如下变动：</p>
+
+<ul>
+<li>安装了 Bootstrap 模板（via <a href="https://github.com/Changaco/gitit-bootstrap">Changaco/gitit-bootstrap</a>）</li>
+<li>安装了 Ace Editor (via <a href="https://gist.github.com/lmullen/e2d2d4aabf84220c517a">Getting the Ace editor to work with gitit</a>)</li>
+<li>Ace Editor 的编辑模式已设为 <code>markdown</code>。
+
+<ul>
+<li>支持代码高亮</li>
+<li>搜索、替换（cmd+option+f）</li>
+<li>Tab 缩进、恢复（tab、shift+tab）</li>
+<li>...</li>
+</ul>
+</li>
+<li>采用配置文件方式启动</li>
+<li>
+<del>默认使用 <code>md</code> 文件后缀（必须使用 gitit 0.11.1+）</del> —— 现在使用默认的 <code>page</code> 了，主要是方便在不同系统上部署，等到 apt-get 的源都已经升级为 0.11.x 时再切换回 <code>md</code>。</li>
+<li>支持在我的版本上自定义 CSS/JSS（在 <code>templates/page_more_scripts.st</code> 中，详见下文）</li>
+<li>启用了部分安全相关配置</li>
+<li>增加了启动、部分、自动备份脚本或帮助</li>
+</ul>
+
+<h2>
+<a id="配置-git" class="anchor" href="#%E9%85%8D%E7%BD%AE-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>配置 git</h2>
+
+<p>如果你已经配置，略过此步。</p>
+
+<div class="highlight highlight-source-shell"><pre>git config --global user.name Your Name
+git config --global user.email Your Email</pre></div>
+
+<h2>
+<a id="clone-我的-gitit-项目" class="anchor" href="#clone-%E6%88%91%E7%9A%84-gitit-%E9%A1%B9%E7%9B%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>clone 我的 gitit 项目</h2>
+
+<div class="highlight highlight-source-shell"><pre>git clone https://github.com/shajiquan/gitit-bigger <span class="pl-k">~</span>/workspace/gitit
+<span class="pl-c1">cd</span> <span class="pl-k">~</span>/workspace/gitit
+git branch --set-upstream-to=origin/master master
+cp sample.gitit.conf my-gitit.conf</pre></div>
+
+<h2>
+<a id="更改基本配置" class="anchor" href="#%E6%9B%B4%E6%94%B9%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>更改基本配置</h2>
+
+<p>根据你的需要，修改 <code>my-gitit.conf</code> 配置文件，如：</p>
+
+<ul>
+<li>
+<code>port</code>: 7500</li>
+<li>
+<code>wiki-title</code>: 危机百科</li>
+</ul>
+
+<h2>
+<a id="clone-你的数据" class="anchor" href="#clone-%E4%BD%A0%E7%9A%84%E6%95%B0%E6%8D%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>clone 你的数据</h2>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">cd</span> <span class="pl-k">~</span>/workspace/gitit
+git clone your-wikidata.git ./wikidata
+git branch --set-upstream-to=origin/master master</pre></div>
+
+<h2>
+<a id="自动备份" class="anchor" href="#%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD" aria-hidden="true"><span class="octicon octicon-link"></span></a>自动备份</h2>
+
+<ul>
+<li>运行 <code>./run/gen_crontab_cmd.py</code>
+</li>
+<li>得到类似 <code>* * * * * /auto-data.sh &gt; /log-auto-data.log 2&gt;&amp;1 &amp;</code> 命令。</li>
+<li>运行 <code>crontab -e</code> 并将刚才得到的命令粘贴到底部，关闭文件即可。</li>
+</ul>
+
+<h2>
+<a id="启用-gitit-服务" class="anchor" href="#%E5%90%AF%E7%94%A8-gitit-%E6%9C%8D%E5%8A%A1" aria-hidden="true"><span class="octicon octicon-link"></span></a>启用 gitit 服务</h2>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">cd</span> <span class="pl-k">~</span>/workspace/gitit
+./run/run.sh start</pre></div>
+
+<p>此时，就可以访问 wiki 了：http://ip|domain:7500</p>
+
+<p>这将使用 <code>nohup</code> 的方式使用服务在后台运行，当然了，你也可以使用 <code>supervisord</code> 之类来管理。</p>
+
+<h2>
+<a id="更改扩展名" class="anchor" href="#%E6%9B%B4%E6%94%B9%E6%89%A9%E5%B1%95%E5%90%8D" aria-hidden="true"><span class="octicon octicon-link"></span></a>更改扩展名</h2>
+
+<p>背景：</p>
+
+<ol>
+<li>正如上文所说，gitit 0.11.x 支持配置文件扩展名，0.10.x 不支持。即使我们配置 <code>default-extension</code> 为 <code>md</code>，gitit 仍然会将新建的文件的扩展名设为 <code>page</code>。</li>
+<li>而目前 <code>apt-get</code> 安装源中的 gitit 都是 0.10.x，如果你要使用 0.11.x，必须使用 <code>cabal</code> 来安装，而使用 <code>cabal</code> 安装时，却可能因为各种原因安装失败。</li>
+</ol>
+
+<p>我们可能会因为某些原因需要将自己的 wiki 条目文件的扩展名进行批量更改，比如从 <code>md</code> 改为 <code>page</code>，或者从 <code>page</code> 改为 <code>md</code> ，或者从 <code>txt</code>、<code>markdown</code> 改为 <code>md</code>。</p>
+
+<p>我写了一个脚本来做这个事情：<code>./run/batch_renamer_by_ext.py</code>，基本用法如下：</p>
+
+<p><code>./batch_renamer_by_ext.py --d /path/to/wikidata --f txt --t md --add False --push False --commit False</code></p>
+
+<ul>
+<li>
+<code>--d</code>: wiki 条目所在目录，必须使用绝对路径，如 <code>/home/shajiquan/gitit/wikidata</code>。如果不传入，脚本会将脚本所在目录当作目标目录。</li>
+<li>
+<code>--f</code>: 原始后缀名，默认为 <code>page</code>。</li>
+<li>
+<code>--t</code>: 目标后缀名，默认 <code>md</code>。</li>
+<li>
+<code>--add</code>、<code>--commit</code>、<code>--push</code>：是否在更改后缀名之后进行 git 的相关操作，默认为 <code>True</code>。指定非 <code>True</code> 值时，脚本将不会执行相关的 git 操作。</li>
+<li>
+<code>注意</code>： 如果你使用脚本进行批量处理了，但没有将新文件 <code>git add</code> 到仓库里，或者没有执行 <code>git commit</code>，那么你的 wiki 中将不会有这些条目。</li>
+</ul>
+
+<h2>
+<a id="限制用户" class="anchor" href="#%E9%99%90%E5%88%B6%E7%94%A8%E6%88%B7" aria-hidden="true"><span class="octicon octicon-link"></span></a>限制用户</h2>
+
+<ul>
+<li>请参阅 <code>require-authentication</code>、<code>access-question</code>、<code>access-question-answers</code> 配置项。</li>
+<li>创建自己所需要的用户后，可以将项目目录的 <code>gitit-users</code> 文件权限设置为只读。</li>
+</ul>
+
+<h2>
+<a id="docker-版" class="anchor" href="#docker-%E7%89%88" aria-hidden="true"><span class="octicon octicon-link"></span></a>Docker 版</h2>
+
+<p>要点如下：</p>
+
+<ul>
+<li>使用 debian 系统；</li>
+<li>使用 supervisord 进程管理；</li>
+<li>支持挂载已存在的 gitit 项目文件夹（建议采用这种方案来启动容器）；</li>
+</ul>
+
+<p>关于批量修改文件名后缀、自动备份数据（push 到远程仓库）请参见上文。</p>
+
+<p>如果不挂载已有 gitit 项目，可能带来的问题：</p>
+
+<ul>
+<li>
+<code>git</code> 相关配置如 user、email 需要自己进入到容器中单独配置。</li>
+<li>
+<code>git</code> 推送相关，也需要单独处理（ssh keys、 git remote 等）。</li>
+</ul>
+
+<p>虽然我们可以尝试把宿主环境的相关配置复制到容器中，或者手动进入容器更改，但仍然麻烦，不如挂载宿主环境上的 gitit 项目更省事。</p>
+
+<h3>
+<a id="不挂载已有-gitit" class="anchor" href="#%E4%B8%8D%E6%8C%82%E8%BD%BD%E5%B7%B2%E6%9C%89-gitit" aria-hidden="true"><span class="octicon octicon-link"></span></a>不挂载已有 gitit</h3>
+
+<div class="highlight highlight-source-shell"><pre>docker run -d --name gitit -p 7500:7500 shajiquan/gitit</pre></div>
+
+<h3>
+<a id="挂载已有-gitit" class="anchor" href="#%E6%8C%82%E8%BD%BD%E5%B7%B2%E6%9C%89-gitit" aria-hidden="true"><span class="octicon octicon-link"></span></a>挂载已有 gitit</h3>
+
+<p>假设你的 gitit 项目在 <code>~/workspace/gitit</code> 下，将此目录挂载到 docker 容器里：</p>
+
+<div class="highlight highlight-source-shell"><pre>docker run -d --name gitit -p 7500:7500 -v <span class="pl-k">~</span>/workspace/gitit:/data/gitit shajiquan/gitit</pre></div>
+
+<h3>
+<a id="重启-docker-容器中的-gitit-服务" class="anchor" href="#%E9%87%8D%E5%90%AF-docker-%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84-gitit-%E6%9C%8D%E5%8A%A1" aria-hidden="true"><span class="octicon octicon-link"></span></a>重启 docker 容器中的 gitit 服务</h3>
+
+<p>如果 gitit 配置文件、模板、静态文件有修改，必须重启 gitit。假设你的容器名称是 <code>gitit</code>，使用容器内的 <code>supervisord</code> 来重启 gitit 服务：</p>
+
+<div class="highlight highlight-source-shell"><pre>docker <span class="pl-c1">exec</span> -d gitit supervisorctl restart gitit</pre></div>
+
+<p>或者</p>
+
+<div class="highlight highlight-source-shell"><pre>docker ps -a <span class="pl-k">|</span> grep <span class="pl-s"><span class="pl-pds">'</span>gitit<span class="pl-pds">'</span></span> <span class="pl-k">|</span> awk <span class="pl-s"><span class="pl-pds">'</span>{print $1}<span class="pl-pds">'</span></span> <span class="pl-k">|</span>xargs -i docker <span class="pl-c1">exec</span> -itd {} supervisorctl restart gitit</pre></div>
+
+<h3>
+<a id="进入到容器的-shell-中" class="anchor" href="#%E8%BF%9B%E5%85%A5%E5%88%B0%E5%AE%B9%E5%99%A8%E7%9A%84-shell-%E4%B8%AD" aria-hidden="true"><span class="octicon octicon-link"></span></a>进入到容器的 shell 中</h3>
+
+<p>假设你的容器名称是 <code>gitit</code>：</p>
+
+<div class="highlight highlight-source-shell"><pre>docker <span class="pl-c1">exec</span> -it gitit bash</pre></div>
+
+<h3>
+<a id="挂载卷" class="anchor" href="#%E6%8C%82%E8%BD%BD%E5%8D%B7" aria-hidden="true"><span class="octicon octicon-link"></span></a>挂载卷</h3>
+
+<p>本镜像支持挂载一个已存在的 gitit 文件夹到容器中。我建议使用已存在的 gitit 项目。</p>
+
+<p>容器中的 Gitit 工作目录是: <code>/data/gitit</code>。容器在启用时将会检测如下文件，如果他们不存在，将会复制一份默认版。</p>
+
+<ul>
+<li><code>/data/gitit/my-gitit.conf</code></li>
+<li><code>/data/gitit/supervisord.conf</code></li>
+</ul>
+
+<p>Gitit 服务启用时将自动创建如下目录（如果它们不存在） :</p>
+
+<ul>
+<li>
+<code>/data/gitit/static/</code> ：必须的静态文件；</li>
+<li>
+<code>/data/gitit/templates/</code> 模板；</li>
+<li>
+<code>/data/gitit/wikidata/</code> Wiki 页面所在目录，一个 git repo；</li>
+</ul>
+
+<h2>
+<a id="自定义-jscss" class="anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89-jscss" aria-hidden="true"><span class="octicon octicon-link"></span></a>自定义 JS/CSS</h2>
+
+<p><code>templates/page_more_scripts.st</code> 这个文件已被引入到 <code>templates/page.st</code>(模板主文件)中，但这个 more 文件，并没有被加入到 git 版本控制中。</p>
+
+<p>因此，你可以在 <code>page_more_scripts.st</code> 中定制 CSS/JS。在 Gitit 的系统里，这个文件将被当作 <code>HTML</code> 来处理。我的内容如下：</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>/js/highlight/styles/monokai_sublime.css<span class="pl-pds">"</span></span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>/js/highlight/highlight.pack.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+
+<span class="pl-s1">&lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1"><span class="pl-c">// more js scripts here</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// jquery shoud be escaped. or you can just use jQuery(document)</span></span>
+<span class="pl-s1">\$(<span class="pl-s"><span class="pl-pds">"</span>#content<span class="pl-pds">"</span></span>).ready(<span class="pl-k">function</span>(){</span>
+<span class="pl-s1">    \$(<span class="pl-s"><span class="pl-pds">"</span>#content a[href^='http://']<span class="pl-pds">"</span></span>).attr(<span class="pl-s"><span class="pl-pds">"</span>target<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>_blank<span class="pl-pds">"</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    \$(<span class="pl-s"><span class="pl-pds">'</span>pre<span class="pl-pds">'</span></span>).each(<span class="pl-k">function</span>(<span class="pl-smi">i</span>, <span class="pl-smi">block</span>) {</span>
+<span class="pl-s1">        hljs.highlightBlock(block);</span>
+<span class="pl-s1">    });</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">});</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
+
+<h1>
+<a id="links" class="anchor" href="#links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Links</h1>
+
+<ul>
+<li>Github：<a href="https://github.com/shajiquan/gitit-bigger">https://github.com/shajiquan/gitit-bigger</a>
+</li>
+<li>DockreHub：<a href="https://hub.docker.com/r/shajiquan/gitit">https://hub.docker.com/r/shajiquan/gitit</a>
+</li>
+<li>Demo: <a href="http://wiki.shajiquan.com/gitit-bigger">http://wiki.shajiquan.com/gitit-bigger</a> (Read Only)</li>
+<li>gitit official site: <a href="http://gitit.net">http://gitit.net</a>
+</li>
+<li>gitit official github: <a href="https://github.com/jgm/gitit">https://github.com/jgm/gitit</a>
+</li>
+<li>在Archlinux上部署gitit Wiki: <a href="http://www.360doc.com/content/12/0518/21/21412_211977928.shtml">http://www.360doc.com/content/12/0518/21/21412_211977928.shtml</a>
+</li>
+<li>Gitit - git based wiki: <a href="http://walkingice.blogspot.hk/2011/11/gitit-git-based-wiki.html">http://walkingice.blogspot.hk/2011/11/gitit-git-based-wiki.html</a>
+</li>
+<li>Hyzual/docker-gitit: <a href="https://github.com/Hyzual/docker-gitit">https://github.com/Hyzual/docker-gitit</a>
+</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/shajiquan/gitit-bigger">Gitit-bigger</a> is maintained by <a href="https://github.com/shajiquan">shajiquan</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
