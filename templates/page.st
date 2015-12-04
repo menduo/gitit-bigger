@@ -117,7 +117,7 @@
                         if (selectedText === '') {
                             snippetManager.insertSnippet(editor, '[\${1:text}](http://\$2)');
                         } else {
-                            if(selectedText.search('http://') == 0){
+                            if(selectedText.search('http://') == 0 || selectedText.search("https://")==0 ){
                                 snippetManager.insertSnippet(editor, '[' + selectedText + ']('+selectedText+')');
                             }else{
                                 snippetManager.insertSnippet(editor, '[' + selectedText + '](http://\$1)');
