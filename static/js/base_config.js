@@ -134,13 +134,11 @@ function setShortcuts(editor, snippetManager) {
 
 
 // Base settings.
-
-// You can override base config by using a BIGGER_SETTINGS object.
-
-// Waring, override by BIGGER_SETTINGS.
-
+// You can override base config by using a BIGGER_SETTINGS_APPEND object.
+// Waring, override by "BIGGER_SETTINGS_APPEND" object.
 BIGGER_SETTINGS_BASE = {
     // ace editor settings
+    // more about ace editor: https://ace.c9.io
     "ace": {
         // switch
         "enable": true,
@@ -159,7 +157,6 @@ BIGGER_SETTINGS_BASE = {
             "shortcuts": true, // enable markdown shortcuts
             "shortcutsFunc": setShortcuts // custome shortcut function
         },
-
         // styles: document.style.ATTRS, case-sensitive.
         "styles": {
             "fontSize": "13px",
@@ -174,5 +171,16 @@ BIGGER_SETTINGS_BASE = {
         "exclude": ["/_search", "/_index", "/_category", "/_upload", "/_activity", "/_register", "/_login",
             "/_delete", "/_diff"
         ]
-    }
+    },
+
+    // highlightjs
+    // If your server can't highlightjs the syntax, you can use highlightjs
+    // default: false
+    // more about highlightjs: https://highlightjs.org/
+    "highlightjs": {
+        "enable": true,
+        "theme": "monokai_sublime"
+    },
+    "google_analytics_id": "",
+    "target_blank": false,
 }

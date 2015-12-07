@@ -62,7 +62,9 @@
         <script src="$base$/js/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
         <script src="$base$/js/common_utils.js" type="text/javascript" charset="utf-8"></script>
         <script src="$base$/js/gen_breadcrumb.js" type="text/javascript" charset="utf-8"></script>
+
         <div class="hide page-more-scripts">$page_more_scripts()$</div>
+
         <script src="$base$/js/base_config.js" type="text/javascript" charset="utf-8"></script>
         <script src="$base$/js/ace_config.js" type="text/javascript" charset="utf-8"></script>
         <script src="$base$/js/page.js" type="text/javascript" charset="utf-8"></script>

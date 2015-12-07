@@ -1,9 +1,12 @@
 function _getBiggerSettingsObject() {
     var _settings = BIGGER_SETTINGS_BASE;
+
+    // check user custome settings
     var _has__bs = typeof(BIGGER_SETTINGS_APPEND) != "undefined" && $.isPlainObject(BIGGER_SETTINGS_APPEND);
     if (!_has__bs) {
         return _settings;
     }
+    // merge user custom settings
     MergeObjectAttrs(_settings, BIGGER_SETTINGS_APPEND);
     return _settings;
 }
@@ -31,8 +34,7 @@ function detectAceEditorActions(editorEle, aceConfig) {
 
     // update summary notice.
     var logMsg = document.getElementById("logMsg");
-    logMsg.setAttribute("placeholder",
-        "Edit summary (Briefly describe your changes)")
+    logMsg.setAttribute("placeholder", "Edit summary (Briefly describe your changes)")
 
     if (!is_mobile_device && aceConfig.enable) {
         init_ace_editor(editorEle, aceConfig);
@@ -43,7 +45,10 @@ function detectAceEditorActions(editorEle, aceConfig) {
 }
 
 function improveSpecialPages() {
+    // import some pages
     var pathname = location.pathname;
+
+    // improve the upload page.
     if (pathname == '/_upload') {
         $("#file").change(function() {
             var fn = $(this).val().replace(/.*\\/, "");
@@ -52,7 +57,6 @@ function improveSpecialPages() {
     }
 
     // set query value to input if on a search result page.
-
     if (pathname == "/_search") {
         var search_text = getURLParamByName('patterns');
         if (search_text && search_text != "") {
@@ -65,7 +69,6 @@ function improveSpecialPages() {
 
 
 function UIUEImprove() {
-
     // scroll to top button
     var scrollup = $('.scrollup');
     $(scrollup).hide();
@@ -93,6 +96,28 @@ function UIUEImprove() {
     });
 }
 
+
+function utilsImprove(biggerConfig) {
+    if (biggerConfig.google_analytics_id != "") {
+        enableGoogleAnalytics(biggerConfig.google_analytics_id);
+    }
+
+    if (biggerConfig.highlightjs.enable) {
+        var cssFilePath = "/js/highlight/styles/" + biggerConfig.highlightjs.theme + ".css";
+        InsertNewStylesheet(cssFilePath);
+        var callback = function() {
+            $('pre').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        }
+        InsertNewScript("/js/highlight/highlight.pack.js", callback);
+    }
+    if (biggerConfig.target_blank) {
+        $("#content a[href^='http://']").attr("target", "_blank");
+    }
+
+}
+
 $(document).ready(function() {
     var editorEle = document.getElementById("editedText"); // get editor text area
     var biggerConfig = _getBiggerSettingsObject();
@@ -103,7 +128,5 @@ $(document).ready(function() {
     detectAceEditorActions(editorEle, aceConfig);
     improveSpecialPages();
     UIUEImprove();
-
-
-
+    utilsImprove(biggerConfig);
 });
