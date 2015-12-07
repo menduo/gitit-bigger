@@ -39,7 +39,7 @@ docker run -d --name gitit -p 7500:7500 shajiquan/gitit;
 - [view-ipad-mini.png](https://github.com/shajiquan/gitit-bigger/blob/master/screenshots/view-ipad-mini.png)
 - [view-iphone6.png](https://github.com/shajiquan/gitit-bigger/blob/master/screenshots/view-iphone6.png)
 
-## 编辑 Edit
+### 编辑 Edit
 - [edit.png](https://github.com/shajiquan/gitit-bigger/blob/master/screenshots/edit.png)
 - [edit-ipad-mini.png](https://github.com/shajiquan/gitit-bigger/blob/master/screenshots/edit-ipad-mini.png)
 - [edit-iphone6.png](https://github.com/shajiquan/gitit-bigger/blob/master/screenshots/edit-iphone6.png)
@@ -108,7 +108,7 @@ git branch --set-upstream-to=origin/master master
 # 启动 gitit 服务: ./run/run.sh start
 ```
 
-## 配置、自定义 JS/CSS
+# 配置、自定义 JS/CSS
 
 Gitit Bigger 提供一定程度的配置。
 
