@@ -4,7 +4,7 @@ Gitit Bigger: Git and Markdown based wiki, Bootstrap, ace Editor, syntax highlig
 
 基于 Git 和 Markdown 的超棒的 Wiki 系统，Bootstrap、Ace 编辑器等增强，支持 Docker 部署。
 
-# 开始 Bigger Start
+# 开始 Start Bigger
 
 *假定你已安装 Git 和 Gitit*
 
@@ -28,12 +28,13 @@ docker run -d --name gitit -p 7500:7500 shajiquan/gitit;
 
 # Demo & Screeenshots
 
+## Demos
 - Gitit Bigger：[http://wiki.shajiquan.com/gitit-bigger](http://wiki.shajiquan.com/gitit-bigger) (Read Only)
 - Gitit 官方：[http://gitit.net](http://gitit.net)
 
 
-# 截图 Screenshots
-## 查看 View
+## 截图 Screenshots
+### 查看 View
 - [view.png](https://github.com/shajiquan/gitit-bigger/blob/master/screenshots/view.png)
 - [view-ipad-mini.png](https://github.com/shajiquan/gitit-bigger/blob/master/screenshots/view-ipad-mini.png)
 - [view-iphone6.png](https://github.com/shajiquan/gitit-bigger/blob/master/screenshots/view-iphone6.png)
@@ -82,7 +83,7 @@ docker run -d --name gitit -p 7500:7500 shajiquan/gitit;
 
 
 
-# wikidata 仓库
+# 注意：wikidata 仓库
 
 请注意检查你的 `wikidata/` 目录的 git 配置。请注意：
 
