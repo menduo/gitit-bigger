@@ -16,11 +16,11 @@ logs-*
 
 *supervisord*.sock
 
-
 localscript*.sh
 _test*
 test-*.sh
 *.log
 *.pid
-.DS_Storelocals/
-locals
+.DS_Store
+locals/
+node_modules/

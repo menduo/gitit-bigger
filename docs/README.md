@@ -147,6 +147,7 @@ git push origin master
 
 # 多个实例
 通过配置文件的方式，可以轻松运行多个 Gitit 实例。除 wiki.shajiquan.com 外，我也运行了另外的实例来做私人笔记。
+
 1. `cp sample.gitit.conf my-gitit-private.conf;`
 2. 更新 `my-gitit-private.conf` 里的相关配置，尤其是：端口、wikidata 目录（详见[gitit_config.md 配置](https://github.com/shajiquan/gitit-bigger/blob/master/docs/gitit_config.md)）
 3. 启动新实例：`gitit -f my-gitit-private.conf`
