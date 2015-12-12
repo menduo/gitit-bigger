@@ -15,10 +15,11 @@
         <meta name="poweredby" content="https://github.com/shajiquan/gitit-package">
     </head>
     <body>
+        <div class="container">
+            $header_nav()$
+        </div>
 
-        $header_nav()$
-
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-md-10 " id="maincol">
 
