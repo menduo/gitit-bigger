@@ -12,7 +12,7 @@
         <link href="$base$/_feed/" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed" />
         <link href="$base$/_feed$pageUrl$" type="application/atom+xml" rel="alternate" title="This page's ATOM Feed" />
         $endif$
-        <meta name="poweredby" content="https://github.com/shajiquan/gitit-package">
+        <meta name="poweredby" content="https://github.com/shajiquan/gitit-bigger">
     </head>
     <body>
         <div class="container">
