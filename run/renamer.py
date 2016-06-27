@@ -57,25 +57,30 @@ def rename_files_from_root_dir(dir_path):
 def parsed_args():
     current_dir_path = os.path.split(os.path.abspath(__file__))[0]
 
-    parser = argparse.ArgumentParser(
-        description='Rename files exts for https://github.com/shajiquan/gitit-bigger')
-    parser.add_argument(
-        "d", type=str, default=current_dir_path, help="Root dir path, abs path")
-    parser.add_argument("--f", type=str, default="page",
-                        help="From ext, like txt")
+    parser = argparse.ArgumentParser(description='Rename files exts for https://github.com/shajiquan/gitit-bigger')
+    parser.add_argument("d", type=str, default=current_dir_path, help="Root dir path, abs path")
+    parser.add_argument("--go", default=False, action="store_true", help="Root dir path, abs path")
+    parser.add_argument("--f", type=str, default="page",help="From ext, like txt")
     parser.add_argument("--t", type=str, default="md", help="To ext, like md")
-    parser.add_argument("--add", type=str, action="stroe_true",
-                        default=False, help="Execute git add after files are renamed, default: False.")
-    parser.add_argument("--commit", type=str, action="stroe_true",
-                        default=False, help="Execute git commit after files are renamed, default: False")
-    parser.add_argument("--push", type=str, action="stroe_true",
-                        default=False, help="Execute git push after files are renamed, default: False")
+    parser.add_argument("--add",  action="store_true", default=False,
+                                                    help="Execute git add after files are renamed, default: False.")
+    parser.add_argument("--commit", action="store_true", default=False,
+                                                        help="Execute git commit after files are renamed, default: False")
+    parser.add_argument("--push", action="store_true", default=False,
+                                                    help="Execute git push after files are renamed, default: False")
     args = parser.parse_args()
     return args
 
 
 if __name__ == '__main__':
     args = parsed_args()
+
+    if not args.go:
+        print("no --go, exit")
+        sys.exit(0)
+
+
+
     global source_ext
     source_ext = args.f
     global target_ext
