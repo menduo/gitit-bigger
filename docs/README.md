@@ -186,4 +186,3 @@ git push origin master
 - Gitit Bootstrap 模板：[Changaco/gitit-bootstrap](https://github.com/Changaco/gitit-bootstrap)
 - Gitit ace editor 支持 [Getting the Ace editor to work with gitit](https://gist.github.com/lmullen/e2d2d4aabf84220c517a)
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/shajiquan/gitit-bigger/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
