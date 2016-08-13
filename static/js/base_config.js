@@ -166,8 +166,7 @@ BIGGER_SETTINGS_BASE = {
     },
     "mathjax": {
         "enable": true,
-        // "path": "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML",
-        "path": "http://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML",
+        "path": "//cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML",
         "exclude": ["/_search", "/_index", "/_category", "/_upload", "/_activity", "/_register", "/_login",
             "/_delete", "/_diff"
         ]
