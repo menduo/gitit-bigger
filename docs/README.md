@@ -9,7 +9,7 @@ Gitit Bigger: Git and Markdown based wiki, Bootstrap, ace Editor, syntax highlig
 - 普通版
 
 ```bash
-git clone https://github.com/shajiquan/gitit-bigger ~/workspace/gitit;
+git clone https://github.com/menduo/gitit-bigger ~/workspace/gitit;
 cd ~/workspace/gitit;
 cp sample.gitit.conf my-gitit.conf;
 ./run/run.sh start;
@@ -30,14 +30,14 @@ docker run -d --name gitit -p 7500:7500 shajiquan/gitit;
 
 ## 截图 Screenshots
 ### 查看 View
-- [view.png](https://github.com/shajiquan/gitit-bigger/blob/master/screenshots/view.png)
-- [view-ipad-mini.png](https://github.com/shajiquan/gitit-bigger/blob/master/screenshots/view-ipad-mini.png)
-- [view-iphone6.png](https://github.com/shajiquan/gitit-bigger/blob/master/screenshots/view-iphone6.png)
+- [view.png](https://github.com/menduo/gitit-bigger/blob/master/screenshots/view.png)
+- [view-ipad-mini.png](https://github.com/menduo/gitit-bigger/blob/master/screenshots/view-ipad-mini.png)
+- [view-iphone6.png](https://github.com/menduo/gitit-bigger/blob/master/screenshots/view-iphone6.png)
 
 ### 编辑 Edit
-- [edit.png](https://github.com/shajiquan/gitit-bigger/blob/master/screenshots/edit.png)
-- [edit-ipad-mini.png](https://github.com/shajiquan/gitit-bigger/blob/master/screenshots/edit-ipad-mini.png)
-- [edit-iphone6.png](https://github.com/shajiquan/gitit-bigger/blob/master/screenshots/edit-iphone6.png)
+- [edit.png](https://github.com/menduo/gitit-bigger/blob/master/screenshots/edit.png)
+- [edit-ipad-mini.png](https://github.com/menduo/gitit-bigger/blob/master/screenshots/edit-ipad-mini.png)
+- [edit-iphone6.png](https://github.com/menduo/gitit-bigger/blob/master/screenshots/edit-iphone6.png)
 
 # Gitit 主要特性
 - 无数据库
@@ -55,8 +55,8 @@ docker run -d --name gitit -p 7500:7500 shajiquan/gitit;
 - 导出 epub 等（基于 pandoc）
 
 更多关于 Gitit 的安装、部署、优化的中文介绍和说明，请见:
-- [gitit_base.md 简介、安装、部署](https://github.com/shajiquan/gitit-bigger/blob/master/docs/gitit_base.md)
-- [gitit_config.md 配置](https://github.com/shajiquan/gitit-bigger/blob/master/docs/gitit_config.md)
+- [gitit_base.md 简介、安装、部署](https://github.com/menduo/gitit-bigger/blob/master/docs/gitit_base.md)
+- [gitit_config.md 配置](https://github.com/menduo/gitit-bigger/blob/master/docs/gitit_config.md)
 
 # Gitit Bigger VS Gitit
 - Bootstrap 模板
@@ -110,14 +110,14 @@ Gitit Bigger 提供一定程度的配置。
 - highlightjs 代码高亮
 - Google Analytics 统计
 
-详情见：[gitit_bigger_config.md](https://github.com/shajiquan/gitit-bigger/blob/master/docs/gitit_bigger_config.md)
+详情见：[gitit_bigger_config.md](https://github.com/menduo/gitit-bigger/blob/master/docs/gitit_bigger_config.md)
 
 # 工具 Utils
 - 启动控制
 - 批量修改扩展名
 - 自动备份辅助
 
-详情见：- [gitit_bigger_utils.md](https://github.com/shajiquan/gitit-bigger/blob/master/docs/gitit_bigger_utils.md)
+详情见：- [gitit_bigger_utils.md](https://github.com/menduo/gitit-bigger/blob/master/docs/gitit_bigger_utils.md)
 
 # 通过 Shell 编辑 wiki
 不通过 web界面，也可以操作我们的 Gitit Wiki。背景：
@@ -149,7 +149,7 @@ git push origin master
 # 多个实例
 通过配置文件的方式，可以轻松运行多个 Gitit 实例。除 wiki.shajiquan.com 外，我也运行了另外的实例来做私人笔记。
 1. `cp sample.gitit.conf my-gitit-private.conf;`
-2. 更新 `my-gitit-private.conf` 里的相关配置，尤其是：端口、wikidata 目录（详见[gitit_config.md 配置](https://github.com/shajiquan/gitit-bigger/blob/master/docs/gitit_config.md)）
+2. 更新 `my-gitit-private.conf` 里的相关配置，尤其是：端口、wikidata 目录（详见[gitit_config.md 配置](https://github.com/menduo/gitit-bigger/blob/master/docs/gitit_config.md)）
 3. 启动新实例：`gitit -f my-gitit-private.conf`
 
 注意
@@ -158,24 +158,23 @@ git push origin master
 - 在本地时，可以用 `localhost` 和 `127.0.0.1` 一类的来处理 cookie 域问题。
 
 # Docs
-- [Gitit 简介、安装、部署](https://github.com/shajiquan/gitit-bigger/blob/master/docs/gitit_base.md)
-- [Gitit 配置项介绍](https://github.com/shajiquan/gitit-bigger/blob/master/docs/gitit_config.md)
-- [Gitit-Bigger-Docker 版介绍](https://github.com/shajiquan/gitit-bigger/blob/master/docs/gitit_bigger_docker.md)
-- [Gitit-Bigger 定制说明](https://github.com/shajiquan/gitit-bigger/blob/master/docs/gitit_bigger_config.md)
-- [Gitit-Bigger 工具.md](https://github.com/shajiquan/gitit-bigger/blob/master/docs/gitit_bigger_utils.md)
+- [Gitit 简介、安装、部署](https://github.com/menduo/gitit-bigger/blob/master/docs/gitit_base.md)
+- [Gitit 配置项介绍](https://github.com/menduo/gitit-bigger/blob/master/docs/gitit_config.md)
+- [Gitit-Bigger-Docker 版介绍](https://github.com/menduo/gitit-bigger/blob/master/docs/gitit_bigger_docker.md)
+- [Gitit-Bigger 定制说明](https://github.com/menduo/gitit-bigger/blob/master/docs/gitit_bigger_config.md)
+- [Gitit-Bigger 工具.md](https://github.com/menduo/gitit-bigger/blob/master/docs/gitit_bigger_utils.md)
 
 # Changelogs
-- 简体中文: [CHANGELOG.md](https://github.com/shajiquan/gitit-bigger/blob/master/CHANGELOG.md)
-- English: [CHANGELOG_EN.md](https://github.com/shajiquan/gitit-bigger/blob/master/CHANGELOG_EN.md)
+- 简体中文: [CHANGELOG.md](https://github.com/menduo/gitit-bigger/blob/master/CHANGELOG.md)
+- English: [CHANGELOG_EN.md](https://github.com/menduo/gitit-bigger/blob/master/CHANGELOG_EN.md)
 
 # 反馈、建议、联系
-- Github Issues：[https://github.com/shajiquan/gitit-bigger/issues](https://github.com/shajiquan/gitit-bigger/issues)
-- Email: shajiquan@gmail.com
-- QQ: 2848559858
+- Github Issues：[https://github.com/menduo/gitit-bigger/issues](https://github.com/menduo/gitit-bigger/issues)
+- Email: shimenduo@gmail.com
 
 
 # Links
-- Github：[https://github.com/shajiquan/gitit-bigger](https://github.com/shajiquan/gitit-bigger)
+- Github：[https://github.com/menduo/gitit-bigger](https://github.com/menduo/gitit-bigger)
 - DockreHub：[https://hub.docker.com/r/shajiquan/gitit](https://hub.docker.com/r/shajiquan/gitit)
 - Demo: [http://wiki.shajiquan.com/gitit-bigger](http://wiki.shajiquan.com/gitit-bigger) (Read Only)
 - gitit official site: [http://gitit.net](http://gitit.net)
