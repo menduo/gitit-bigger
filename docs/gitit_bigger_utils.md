@@ -22,7 +22,7 @@
 
 选项：
 
-- `--d`: wiki 条目所在目录，必须使用绝对路径，如 `/home/shajiquan/gitit/wikidata`。如果不传入，脚本会将脚本所在目录当作目标目录。
+- `--d`: wiki 条目所在目录，必须使用绝对路径，如 `/home/menduo/gitit/wikidata`。如果不传入，脚本会将脚本所在目录当作目标目录。
 - `--f`: 原始后缀名，默认为 `page`。
 - `--t`: 目标后缀名，默认 `md`。
 - `--add`、`--commit`、`--push`：是否在更改后缀名之后进行 git 的相关操作，默认为 `True`。指定非 `True` 值时，脚本将不会执行相关的 git 操作。
@@ -34,4 +34,4 @@
 - 得到类似 `* * * * * /auto-data.sh > /log-auto-data.log 2>&1 &` 命令。
 - 运行 `crontab -e` 并将刚才得到的命令粘贴到底部，关闭文件即可。
 
-by [shajiquan](https://github.com/shajiquan/gitit-bigger)
+by [menduo](https://github.com/menduo/gitit-bigger)

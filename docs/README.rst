@@ -25,7 +25,7 @@ highlight and docker deploy support.
 
 .. code:: bash
 
-    docker run -d --name gitit -p 7500:7500 shajiquan/gitit;
+    docker run -d --name gitit -p 7500:7500 menduo/gitit-bigger;
 
 访问：\ http://127.0.0.1:7500
 
@@ -35,7 +35,7 @@ Demo & Screeenshots
 Demos
 -----
 
--  Gitit Bigger：\ http://wiki.shajiquan.com/gitit-bigger (Read Only)
+-  Gitit Bigger：\ https://wiki.menduo.net/gitit-bigger (Read Only)
 -  Gitit 官方：\ http://gitit.net
 
 截图 Screenshots
@@ -162,7 +162,7 @@ wiki pages 的仓库 2. 只有提交到仓库里的文件，才会被 Gitit 添�
 
     # 新增文件并输入一些字符串
     touch new_page.md
-    echo "hello shajiquan" >> new_page.md
+    echo "hello menduo" >> new_page.md
 
     # 添加新文件到仓库
     git add new_pge.md
@@ -179,7 +179,7 @@ wiki pages 的仓库 2. 只有提交到仓库里的文件，才会被 Gitit 添�
 多个实例
 ========
 
-通过配置文件的方式，可以轻松运行多个 Gitit 实例。除 wiki.shajiquan.com
+通过配置文件的方式，可以轻松运行多个 Gitit 实例。除 wiki.menduo.net
 外，我也运行了另外的实例来做私人笔记。 1.
 ``cp sample.gitit.conf my-gitit-private.conf;`` 2. 更新
 ``my-gitit-private.conf`` 里的相关配置，尤其是：端口、wikidata
@@ -225,8 +225,8 @@ Links
 =====
 
 -  Github：\ https://github.com/menduo/gitit-bigger
--  DockreHub：\ https://hub.docker.com/r/shajiquan/gitit
--  Demo: http://wiki.shajiquan.com/gitit-bigger (Read Only)
+-  DockreHub：\ https://hub.docker.com/r/menduo/gitit-bigger
+-  Demo: https://wiki.menduo.net/gitit-bigger (Read Only)
 -  gitit official site: http://gitit.net
 -  gitit official github: https://github.com/jgm/gitit
 -  在Archlinux上部署gitit Wiki:

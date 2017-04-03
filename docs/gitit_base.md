@@ -113,4 +113,4 @@ nohup gitit -f my-gitit.conf > logs-gitit.log & echo $! > pid-my-gitit.conf.pid 
     ├── private_wiki_page.md
 ```
 
-by [shajiquan](https://github.com/shajiquan/gitit-bigger)
+by [menduo](https://github.com/menduo/gitit-bigger)

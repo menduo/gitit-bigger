@@ -22,10 +22,10 @@
   - `modify`: 编辑阶段。当用户要编辑、删除条目时，需要登录。
   - `read`：阅读阶段。当用户需要浏览条目时，需要登录。
 
-- `access-question`: Who is shajiquan? # 访问控制问题。
+- `access-question`: Who is menduo? # 访问控制问题。
   - 在创建用户时，将必须回答这个问题。答案必须是下方的 `access-question-answers` 中指定的答案，答案间使用英文逗号分隔。
 
-- `access-question-answers`: [github.com/shajiquan](https://github.com/shajiquan), [https://github.com/shajiquan](https://github.com/shajiquan)
+- `access-question-answers`: [github.com/menduo](https://github.com/menduo), [https://github.com/menduo](https://github.com/menduo)
 - `default-extension`: md # 默认文件名扩展，官方默认的是 `page`，我自己的版本使用的是 `md`。
   - `注意`：这个只在 Gitit 0.11.x 上才有作用，这意味着，当你使用 0.10.x 时，即使配置了默认扩展为 `md`，最后创建的文件，其扩展名仍然是 `page`。
 

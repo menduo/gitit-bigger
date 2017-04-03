@@ -18,14 +18,14 @@ cp sample.gitit.conf my-gitit.conf;
 - Docker 版
 
 ```bash
-docker run -d --name gitit -p 7500:7500 shajiquan/gitit;
+docker run -d --name gitit -p 7500:7500 menduo/gitit-bigger;
 ```
 
 访问：[http://127.0.0.1:7500](http://127.0.0.1:7500)
 
 # Demo & Screeenshots
 ## Demos
-- Gitit Bigger：[http://wiki.shajiquan.com/gitit-bigger](http://wiki.shajiquan.com/gitit-bigger) (Read Only)
+- Gitit Bigger：[http://wiki.menduo.net/gitit-bigger](http://wiki.menduo.net/gitit-bigger) (Read Only)
 - Gitit 官方：[http://gitit.net](http://gitit.net)
 
 ## 截图 Screenshots
@@ -131,7 +131,7 @@ cd /path/to/your/wikidata
 
 # 新增文件并输入一些字符串
 touch new_page.md
-echo "hello shajiquan" >> new_page.md
+echo "hello menduo" >> new_page.md
 
 # 添加新文件到仓库
 git add new_pge.md
@@ -147,7 +147,7 @@ git push origin master
 ```
 
 # 多个实例
-通过配置文件的方式，可以轻松运行多个 Gitit 实例。除 wiki.shajiquan.com 外，我也运行了另外的实例来做私人笔记。
+通过配置文件的方式，可以轻松运行多个 Gitit 实例。除 wiki.menduo.net 外，我也运行了另外的实例来做私人笔记。
 1. `cp sample.gitit.conf my-gitit-private.conf;`
 2. 更新 `my-gitit-private.conf` 里的相关配置，尤其是：端口、wikidata 目录（详见[gitit_config.md 配置](https://github.com/menduo/gitit-bigger/blob/master/docs/gitit_config.md)）
 3. 启动新实例：`gitit -f my-gitit-private.conf`
@@ -175,8 +175,8 @@ git push origin master
 
 # Links
 - Github：[https://github.com/menduo/gitit-bigger](https://github.com/menduo/gitit-bigger)
-- DockreHub：[https://hub.docker.com/r/shajiquan/gitit](https://hub.docker.com/r/shajiquan/gitit)
-- Demo: [http://wiki.shajiquan.com/gitit-bigger](http://wiki.shajiquan.com/gitit-bigger) (Read Only)
+- DockreHub：[https://hub.docker.com/r/menduo/gitit-bigger](https://hub.docker.com/r/menduo/gitit-bigger)
+- Demo: [http://wiki.menduo.net/gitit-bigger](http://wiki.menduo.net/gitit-bigger) (Read Only)
 - gitit official site: [http://gitit.net](http://gitit.net)
 - gitit official github: [https://github.com/jgm/gitit](https://github.com/jgm/gitit)
 - 在Archlinux上部署gitit Wiki: [http://www.360doc.com/content/12/0518/21/21412_211977928.shtml](http://www.360doc.com/content/12/0518/21/21412_211977928.shtml)
